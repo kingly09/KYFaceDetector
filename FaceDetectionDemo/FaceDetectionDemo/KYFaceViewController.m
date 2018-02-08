@@ -12,6 +12,8 @@
 #import <AVFoundation/AVFoundation.h>
 #import <FDFramework/FaceDetector.h>
 
+#import "KYFaceAnimationView.h"
+
 
 @interface KYFaceViewController ()<FaceDetectorDelegate> {
   
@@ -21,14 +23,13 @@
   dispatch_queue_t queueOutput;
   dispatch_queue_t queueMeta;
   
-  UILabel *labelStatus;
-  
   FaceDetector *faceDetector;
+  
+  KYFaceAnimationView *faceAnimationView;
 }
 
-- (void)setupCamera;
-- (void)cancel:(id)sender;
-
+// 取消认证
+@property (nonatomic) UIBarButtonItem *cancelButtonItem;
 
 @end
 
@@ -38,6 +39,7 @@
   [super viewDidLoad];
   
   self.title = @"人脸识别";
+  [self.navigationItem setRightBarButtonItems:@[self.cancelButtonItem]];
   
   // get the face detector reference
   AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
@@ -45,12 +47,18 @@
   [faceDetector setDelegate:self];
   
   [self setupCamera];
+  
+  faceAnimationView = [[KYFaceAnimationView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 220,self.view.frame.size.width , 220)];
+  [[self view] addSubview:faceAnimationView];
+  
 }
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
   
   [faceDetector check];
+  
+  [faceAnimationView showAnimationLabel:FaceAnimationTypeDefault];
   
   [session startRunning];
 }
@@ -129,30 +137,32 @@
   [previewLayer setFrame:[rootLayer bounds]];
   [rootLayer addSublayer:previewLayer];
   
-  labelStatus = [[UILabel alloc] initWithFrame:CGRectMake(0, 80, [[self view] frame].size.width, 30)];
-  [labelStatus setTextColor:[UIColor greenColor]];
-  [labelStatus setFont:[UIFont boldSystemFontOfSize:32]];
-  [labelStatus setTextAlignment:NSTextAlignmentCenter];
-  [[self view] addSubview:labelStatus];
-  
-  UIButton *btnCancel = [UIButton buttonWithType:UIButtonTypeSystem];
-  [btnCancel setFrame:CGRectMake(20, [[self view] frame].size.height - 50, [[self view] frame].size.width - 40, 30)];
-  [[btnCancel titleLabel] setFont:[UIFont boldSystemFontOfSize:26]];
-  [btnCancel setTitle:@"Cancel" forState:UIControlStateNormal];
-  [btnCancel addTarget:self action:@selector(cancel:) forControlEvents:UIControlEventTouchUpInside];
-  [[self view] addSubview:btnCancel];
-  
-  //layer = [[AVSampleBufferDisplayLayer alloc] init];
-  //[layer setFrame:[self view].frame];
-  //[[[self view] layer] addSublayer:layer];
-  
+
 }
 
-- (void)cancel:(id)sender {
-  [[self navigationController] popViewControllerAnimated:NO];
+
+-(UIBarButtonItem *)cancelButtonItem{
+  if (!_cancelButtonItem) {
+    UIButton* cancelButton = [[UIButton alloc] init];
+    cancelButton.frame = CGRectMake(0, 0, 60, 44);
+    [cancelButton adjustsImageWhenHighlighted];
+    [cancelButton adjustsImageWhenDisabled];
+    [cancelButton setTitle:@"取消认证" forState:UIControlStateNormal];
+    [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [cancelButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
+    [cancelButton addTarget:self action:@selector(cancelButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    _cancelButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
+  }
+  return _cancelButtonItem;
 }
 
-#pragma mark -
+
+-(void)cancelButtonClicked:(id)sender {
+  
+   [[self navigationController] popViewControllerAnimated:NO];
+}
+
+
 #pragma mark FaceDetector Delegate Methods
 
 - (void)shouldValidate:(UIImage *)image {
@@ -160,15 +170,30 @@
 }
 
 - (void)motionDetected:(Motion)motion {
-  if (motion == MotionMouth) {
-    [session stopRunning];
+  
+  if (motion == MotionReady){  //正视完成
+    
+     dispatch_async(dispatch_get_main_queue(), ^{
+          [faceAnimationView showAnimationLabel:FaceAnimationTypeOpenMouth];
+     });
+  }else if (motion == MotionMouth){  //通过检测
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+      [faceAnimationView showAnimationLabel:FaceAnimationTypeFinish];
+    });
   }
+
+  NSLog(@"motion::%u",motion);
+  
+//  if (motion == MotionMouth) {
+//      [session stopRunning];
+//  }
 }
 
 - (void)updateText {
-  dispatch_async(dispatch_get_main_queue(), ^{
-    [labelStatus setText:[faceDetector statusText]];
-  });
+  
+  NSLog(@"statusText:%@",[faceDetector statusText]);
+  
 }
 
 @end
