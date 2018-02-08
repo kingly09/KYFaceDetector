@@ -27,6 +27,7 @@
 		BC490B6E202BF32800F463F5 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC490B6D202BF32800F463F5 /* SystemConfiguration.framework */; };
 		BC490B70202BF33100F463F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC490B6F202BF33100F463F5 /* UIKit.framework */; };
 		BC490B72202BF33A00F463F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC490B71202BF33A00F463F5 /* Foundation.framework */; };
+		BC490B75202C095800F463F5 /* KYFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC490B74202C095800F463F5 /* KYFaceViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		BC490B6D202BF32800F463F5 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BC490B6F202BF33100F463F5 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BC490B71202BF33A00F463F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BC490B73202C095800F463F5 /* KYFaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYFaceViewController.h; sourceTree = "<group>"; };
+		BC490B74202C095800F463F5 /* KYFaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYFaceViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				BC490B27202BEB4000F463F5 /* AppDelegate.mm */,
 				BC490B29202BEB4000F463F5 /* ViewController.h */,
 				BC490B2A202BEB4000F463F5 /* ViewController.m */,
+				BC490B73202C095800F463F5 /* KYFaceViewController.h */,
+				BC490B74202C095800F463F5 /* KYFaceViewController.m */,
 				BC490B2C202BEB4000F463F5 /* Main.storyboard */,
 				BC490B32202BEB4000F463F5 /* Assets.xcassets */,
 				BC490B34202BEB4000F463F5 /* LaunchScreen.storyboard */,
@@ -256,6 +261,7 @@
 		BC490B1B202BEB4000F463F5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = KY;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Bambooclound Co., Ltd.";
 				TargetAttributes = {
@@ -330,6 +336,7 @@
 			files = (
 				BC490B31202BEB4000F463F5 /* FaceDetectionDemo.xcdatamodeld in Sources */,
 				BC490B2B202BEB4000F463F5 /* ViewController.m in Sources */,
+				BC490B75202C095800F463F5 /* KYFaceViewController.m in Sources */,
 				BC490B39202BEB4100F463F5 /* main.m in Sources */,
 				BC490B28202BEB4000F463F5 /* AppDelegate.mm in Sources */,
 			);

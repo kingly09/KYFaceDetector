@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "KYFaceViewController.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -25,5 +28,16 @@
   // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)onClickSelfPortraits:(id)sender {
+  
+  
+}
+
+- (IBAction)onClickFaceDetect:(id)sender {
+  
+  KYFaceViewController *faceController = [[KYFaceViewController alloc] init];
+   [[self navigationController] pushViewController:faceController animated:YES];
+  
+}
 
 @end
