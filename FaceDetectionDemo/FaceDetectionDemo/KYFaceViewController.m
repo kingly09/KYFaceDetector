@@ -205,15 +205,15 @@
     
     dispatch_async(dispatch_get_main_queue(), ^{
       [faceAnimationView showAnimationLabel:FaceAnimationTypeFinish];
+      
+      if (_delegate && [_delegate respondsToSelector:@selector(faceDetection:withCurrImage:withError:)]) {
+        [_delegate faceDetection:KYFaceDetectionStateSuccess withCurrImage:currImage withError:nil];
+      }
+      
+      [[self navigationController] popViewControllerAnimated:NO];
+      
     });
-    
-    
-    if (_delegate && [_delegate respondsToSelector:@selector(faceDetection:withCurrImage:withError:)]) {
-      [_delegate faceDetection:KYFaceDetectionStateSuccess withCurrImage:currImage withError:nil];
-    }
-    
-    [[self navigationController] popViewControllerAnimated:NO];
-    
+
   }
 
   NSLog(@"motion::%u",motion);
