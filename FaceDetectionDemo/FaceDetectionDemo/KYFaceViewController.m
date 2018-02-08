@@ -13,7 +13,10 @@
 #import <FDFramework/FaceDetector.h>
 
 #import "KYFaceAnimationView.h"
+#import "KYFaceDetectorErrorView.h"
 
+#define KScreenWidth ([UIScreen mainScreen].bounds.size.width)
+#define KScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
 @interface KYFaceViewController ()<FaceDetectorDelegate> {
   
@@ -28,6 +31,11 @@
   KYFaceAnimationView *faceAnimationView;
   
   UIImage *currImage;
+  
+  UIScrollView *myScrollView;  //滚动视图
+  UIView *leftView;            //左边视图
+  KYFaceDetectorErrorView *faceDetectorErrorView;
+  
 }
 
 // 取消认证
@@ -48,10 +56,25 @@
   faceDetector = [delegate faceDetector];
   [faceDetector setDelegate:self];
   
+  
+  //滚动视图
+  myScrollView = [[UIScrollView alloc]init];
+  myScrollView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
+  myScrollView.userInteractionEnabled = YES;
+  [self.view addSubview:myScrollView];
+  
+  leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight)];
+  leftView.backgroundColor = [UIColor clearColor];
+  [myScrollView addSubview:leftView];
+  
+  faceDetectorErrorView = [[KYFaceDetectorErrorView alloc] initWithFrame:CGRectMake(KScreenWidth, 0, KScreenWidth,KScreenHeight)];
+  faceDetectorErrorView.backgroundColor = [UIColor whiteColor];
+  [myScrollView addSubview:faceDetectorErrorView];
+  
   [self setupCamera];
   
-  faceAnimationView = [[KYFaceAnimationView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 220,self.view.frame.size.width , 220)];
-  [[self view] addSubview:faceAnimationView];
+  faceAnimationView = [[KYFaceAnimationView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 220,self.view.frame.size.width, 220)];
+  [leftView addSubview:faceAnimationView];
   
   
   
@@ -147,7 +170,7 @@
   [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
   
   
-  CALayer *rootLayer = [[self view] layer];
+  CALayer *rootLayer = [leftView layer];
   [rootLayer setMasksToBounds:YES];
   [previewLayer setFrame:[rootLayer bounds]];
   [rootLayer addSublayer:previewLayer];
