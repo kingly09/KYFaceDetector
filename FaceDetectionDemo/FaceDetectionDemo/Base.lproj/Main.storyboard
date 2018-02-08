@@ -29,7 +29,7 @@
                                     <action selector="onClickFaceDetect:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ekc-m5-d1b"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="37O-9c-vUI">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photography_face-detection-180.png" translatesAutoresizingMaskIntoConstraints="NO" id="37O-9c-vUI">
                                 <rect key="frame" x="67" y="151" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -72,4 +72,7 @@
             <point key="canvasLocation" x="-214" y="-114"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="photography_face-detection-180.png" width="180" height="180"/>
+    </resources>
 </document>
