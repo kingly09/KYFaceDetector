@@ -53,6 +53,8 @@
   faceAnimationView = [[KYFaceAnimationView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 220,self.view.frame.size.width , 220)];
   [[self view] addSubview:faceAnimationView];
   
+  
+  
 }
 
 - (void)viewWillAppear:(BOOL)animated {
