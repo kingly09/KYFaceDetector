@@ -69,6 +69,15 @@
   [session stopRunning];
 }
 
+
+-(void)dealloc {
+  
+  faceDetector = nil;
+  
+  
+}
+
+
 - (void)setupCamera {
   
   AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
@@ -130,8 +139,10 @@
   
   // add layer
   previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:session];
-  [previewLayer setBackgroundColor:[[UIColor blackColor] CGColor]];
+  [previewLayer setBackgroundColor:[[UIColor clearColor] CGColor]];
   [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+  
+  
   CALayer *rootLayer = [[self view] layer];
   [rootLayer setMasksToBounds:YES];
   [previewLayer setFrame:[rootLayer bounds]];
