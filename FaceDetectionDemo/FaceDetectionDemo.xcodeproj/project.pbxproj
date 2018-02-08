@@ -28,6 +28,7 @@
 		BC490B70202BF33100F463F5 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC490B6F202BF33100F463F5 /* UIKit.framework */; };
 		BC490B72202BF33A00F463F5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC490B71202BF33A00F463F5 /* Foundation.framework */; };
 		BC490B75202C095800F463F5 /* KYFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC490B74202C095800F463F5 /* KYFaceViewController.m */; };
+		BC490B7D202C11D600F463F5 /* photography_face-detection-180.png in Resources */ = {isa = PBXBuildFile; fileRef = BC490B7C202C11D600F463F5 /* photography_face-detection-180.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		BC490B71202BF33A00F463F5 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BC490B73202C095800F463F5 /* KYFaceViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYFaceViewController.h; sourceTree = "<group>"; };
 		BC490B74202C095800F463F5 /* KYFaceViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYFaceViewController.m; sourceTree = "<group>"; };
+		BC490B7C202C11D600F463F5 /* photography_face-detection-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photography_face-detection-180.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				BC490B73202C095800F463F5 /* KYFaceViewController.h */,
 				BC490B74202C095800F463F5 /* KYFaceViewController.m */,
 				BC490B2C202BEB4000F463F5 /* Main.storyboard */,
+				BC490B7C202C11D600F463F5 /* photography_face-detection-180.png */,
 				BC490B32202BEB4000F463F5 /* Assets.xcassets */,
 				BC490B34202BEB4000F463F5 /* LaunchScreen.storyboard */,
 				BC490B37202BEB4000F463F5 /* Info.plist */,
@@ -306,6 +309,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC490B7D202C11D600F463F5 /* photography_face-detection-180.png in Resources */,
 				BC490B36202BEB4000F463F5 /* LaunchScreen.storyboard in Resources */,
 				BC490B33202BEB4000F463F5 /* Assets.xcassets in Resources */,
 				BC490B60202BF15700F463F5 /* face.dat in Resources */,
