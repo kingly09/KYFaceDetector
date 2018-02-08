@@ -9,9 +9,13 @@
 #import "ViewController.h"
 #import "KYFaceViewController.h"
 
-@interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate,KYFaceViewControllerDelegate> {
+  
+  UIImage *currImage;
+}
 
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIImageView *zjImageView;
 
 @end
 
@@ -54,6 +58,7 @@
   picker.sourceType = sourceType;
   picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
   [self presentViewController:picker animated:YES completion:^{}];//进入照相界面
+  
 }
 
 
@@ -65,6 +70,8 @@
   [picker dismissViewControllerAnimated:YES completion:^{}];
   UIImage *picture = [info objectForKey:UIImagePickerControllerOriginalImage];
   
+  currImage = picture;
+  
   _imageView.image = picture;
 }
 
@@ -73,13 +80,52 @@
   //设置statusb的样式
   [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
   [picker dismissViewControllerAnimated:YES completion:^{}];
+  
 }
 
 
 - (IBAction)onClickFaceDetect:(id)sender {
   
+  
+  if (currImage == nil) {
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"请先拍一张人脸图，再点击人脸识别" preferredStyle:UIAlertControllerStyleAlert];
+    
+    [alert addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+    }]];
+    [self presentViewController:alert animated:YES completion:nil];
+    
+    return;
+  }
+  
   KYFaceViewController *faceController = [[KYFaceViewController alloc] init];
-   [[self navigationController] pushViewController:faceController animated:YES];
+  faceController.delegate = self;
+  faceController.comparedPicture = _imageView.image;
+  [[self navigationController] pushViewController:faceController animated:YES];
+  
+}
+
+#pragma mark - KYFaceViewControllerDelegate
+/**
+ 人脸比对结果
+ 
+ @param faceDetectionState 人脸比对的状态
+ @param currImage  当前获取的人脸头像
+ @param detectionError 人脸比对错误信息
+ */
+- (void)faceDetection:(KYFaceDetectionState )faceDetectionState
+        withCurrImage:(UIImage *)currImage
+            withError:(NSError *)detectionError {
+  
+  
+  if (faceDetectionState == KYFaceDetectionStateSuccess) {
+    
+    _zjImageView.image = currImage;
+    
+  }else{
+    
+     _zjImageView.image = nil;
+  }
   
 }
 

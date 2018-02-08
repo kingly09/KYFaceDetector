@@ -26,6 +26,8 @@
   FaceDetector *faceDetector;
   
   KYFaceAnimationView *faceAnimationView;
+  
+  UIImage *currImage;
 }
 
 // 取消认证
@@ -170,6 +172,11 @@
 
 -(void)cancelButtonClicked:(id)sender {
   
+  
+  if (_delegate && [_delegate respondsToSelector:@selector(faceDetection:withCurrImage:withError:)]) {
+    [_delegate faceDetection:KYFaceDetectionStatecancel withCurrImage:nil withError:nil];
+  }
+  
    [[self navigationController] popViewControllerAnimated:NO];
 }
 
@@ -178,20 +185,35 @@
 
 - (void)shouldValidate:(UIImage *)image {
   NSLog(@"Should Validate!");
+  currImage = image;
+  
 }
 
 - (void)motionDetected:(Motion)motion {
   
   if (motion == MotionReady){  //正视完成
     
+    if (_delegate && [_delegate respondsToSelector:@selector(faceDetection:withCurrImage:withError:)]) {
+      [_delegate faceDetection:KYFaceDetectionStateProcess withCurrImage:currImage withError:nil];
+    }
+    
      dispatch_async(dispatch_get_main_queue(), ^{
           [faceAnimationView showAnimationLabel:FaceAnimationTypeOpenMouth];
      });
+    
   }else if (motion == MotionMouth){  //通过检测
     
     dispatch_async(dispatch_get_main_queue(), ^{
       [faceAnimationView showAnimationLabel:FaceAnimationTypeFinish];
     });
+    
+    
+    if (_delegate && [_delegate respondsToSelector:@selector(faceDetection:withCurrImage:withError:)]) {
+      [_delegate faceDetection:KYFaceDetectionStateSuccess withCurrImage:currImage withError:nil];
+    }
+    
+    [[self navigationController] popViewControllerAnimated:NO];
+    
   }
 
   NSLog(@"motion::%u",motion);
