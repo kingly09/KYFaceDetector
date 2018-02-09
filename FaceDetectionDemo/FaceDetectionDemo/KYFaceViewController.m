@@ -18,7 +18,7 @@
 #define KScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define KScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
-@interface KYFaceViewController ()<FaceDetectorDelegate> {
+@interface KYFaceViewController ()<FaceDetectorDelegate,KYFaceDetectorErrorViewDelegate> {
   
   
   AVCaptureSession *session;
@@ -48,7 +48,9 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
+  self.view.backgroundColor = [UIColor whiteColor];
   self.title = @"人脸识别";
+  [self.navigationItem setHidesBackButton:YES];
   [self.navigationItem setRightBarButtonItems:@[self.cancelButtonItem]];
   
   // get the face detector reference
@@ -61,19 +63,26 @@
   myScrollView = [[UIScrollView alloc]init];
   myScrollView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height);
   myScrollView.userInteractionEnabled = YES;
+  myScrollView.showsHorizontalScrollIndicator = NO;
+  myScrollView.showsVerticalScrollIndicator = NO;
+ // myScrollView.scrollEnabled = NO;
+  myScrollView.contentSize = CGSizeMake(KScreenWidth * 2, KScreenHeight - 64);
   [self.view addSubview:myScrollView];
   
-  leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight)];
+  leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight - 64)];
   leftView.backgroundColor = [UIColor clearColor];
   [myScrollView addSubview:leftView];
   
-  faceDetectorErrorView = [[KYFaceDetectorErrorView alloc] initWithFrame:CGRectMake(KScreenWidth, 0, KScreenWidth,KScreenHeight)];
+  faceDetectorErrorView = [[KYFaceDetectorErrorView alloc] initWithFrame:CGRectMake(KScreenWidth, 0, KScreenWidth,KScreenHeight - 64)];
   faceDetectorErrorView.backgroundColor = [UIColor whiteColor];
+  //faceDetectorErrorView.hidden = YES;
   [myScrollView addSubview:faceDetectorErrorView];
+  
+  
   
   [self setupCamera];
   
-  faceAnimationView = [[KYFaceAnimationView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 220,self.view.frame.size.width, 220)];
+  faceAnimationView = [[KYFaceAnimationView alloc] initWithFrame:CGRectMake(0, leftView.frame.size.height - 220,leftView.frame.size.width, 220)];
   [leftView addSubview:faceAnimationView];
   
   
@@ -94,6 +103,7 @@
   [super viewDidDisappear:animated];
   
   [session stopRunning];
+  
 }
 
 
@@ -204,6 +214,42 @@
   
    [[self navigationController] popViewControllerAnimated:NO];
 }
+
+
+-(void)showFaceDetectorErrorView {
+  
+  faceDetectorErrorView.hidden = NO;
+  
+  if (self.navigationController.navigationBarHidden == NO) {
+     self.navigationController.navigationBarHidden = YES;
+  }
+  
+}
+
+#pragma mark - KYFaceDetectorErrorViewDelegate
+/**
+ 人脸验证失败界面点击重新认证
+ */
+-(void)faceDetectorErrorViewWithClickResetAuthButton {
+  
+  if (self.navigationController.navigationBarHidden == YES) {
+    self.navigationController.navigationBarHidden = NO;
+  }
+  
+}
+
+/**
+ 人脸验证失败界面点击取消认证
+ */
+-(void)faceDetectorErrorViewWithClickCancelButton {
+  
+  if (self.navigationController.navigationBarHidden == YES) {
+    self.navigationController.navigationBarHidden = NO;
+  }
+  
+  
+}
+
 
 
 #pragma mark FaceDetector Delegate Methods
