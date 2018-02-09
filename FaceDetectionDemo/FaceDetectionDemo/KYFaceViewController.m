@@ -199,7 +199,7 @@
     [cancelButton setTitle:@"取消认证" forState:UIControlStateNormal];
     [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [cancelButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
-    [cancelButton addTarget:self action:@selector(showFaceDetectorErrorView) forControlEvents:UIControlEventTouchUpInside];
+    [cancelButton addTarget:self action:@selector(cancelButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     _cancelButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
   }
   return _cancelButtonItem;
@@ -219,10 +219,15 @@
 
 -(void)showFaceDetectorErrorView {
   
+
+  leftView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight + 64);
+  [previewLayer setFrame:[leftView bounds]];
+  faceAnimationView.frame = CGRectMake(0, leftView.frame.size.height - 220 - 64 ,leftView.frame.size.width, 220);
+  
   faceDetectorErrorView.hidden = NO;
   
   if (self.navigationController.navigationBarHidden == NO) {
-     self.navigationController.navigationBarHidden = YES;
+    self.navigationController.navigationBarHidden = YES;
   }
   
   [UIView animateWithDuration:0.5 animations:^{
@@ -242,9 +247,9 @@
   if (self.navigationController.navigationBarHidden == YES) {
     self.navigationController.navigationBarHidden = NO;
   }
+ 
   
   faceDetectorErrorView.hidden = YES;
-  
   
   [UIView animateWithDuration:0.5 animations:^{
         myScrollView.contentOffset = CGPointMake(0, 0);
@@ -252,9 +257,6 @@
     
   }];
   
-  leftView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
-  [previewLayer setFrame:[leftView bounds]];
-  faceAnimationView.frame = CGRectMake(0, leftView.frame.size.height - 220 ,leftView.frame.size.width, 220);
 }
 
 /**
