@@ -23,6 +23,11 @@
 #define KAuthTimeout 10.0     //认证超时时间
 #define KNetworkAuthNum 3     //网络人脸对比的次数
 
+#define isiPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define iPhoneX  [[UIScreen mainScreen] bounds].size.width >= 375.0f && [[UIScreen  mainScreen] bounds].size.height >= 812.0f && isiPhone
+#define kStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+#define kNavBarHeight 44.0
+
 @interface KYFaceViewController ()<FaceDetectorDelegate,KYFaceDetectorErrorViewDelegate> {
   
   
@@ -165,6 +170,7 @@
   leftView.backgroundColor = [UIColor clearColor];
   [myScrollView addSubview:leftView];
   
+  
   faceDetectorErrorView = [[KYFaceDetectorErrorView alloc] initWithFrame:CGRectMake(KScreenWidth, 0, KScreenWidth,KScreenHeight - 64)];
   faceDetectorErrorView.backgroundColor = [UIColor whiteColor];
   faceDetectorErrorView.delegate = self;
@@ -175,7 +181,11 @@
   
   [self setupCamera];
   
+  
   faceAnimationView = [[KYFaceAnimationView alloc] initWithFrame:CGRectMake(0, leftView.frame.size.height - 220 ,leftView.frame.size.width, 220)];
+  if (iPhoneX) {
+    faceAnimationView.frame = CGRectMake(0, leftView.frame.size.height - 220 - 44 ,leftView.frame.size.width, 220);
+  }
   [leftView addSubview:faceAnimationView];
   
   
@@ -355,6 +365,10 @@
   leftView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight + 64);
   [previewLayer setFrame:[leftView bounds]];
   faceAnimationView.frame = CGRectMake(0, leftView.frame.size.height - 220 - 64 ,leftView.frame.size.width, 220);
+  
+  if (iPhoneX) {
+    faceAnimationView.frame = CGRectMake(0, leftView.frame.size.height - 220 - 108 ,leftView.frame.size.width, 220);
+  }
   
   [faceAnimationView showAnimationLabel:FaceAnimationTypeDefault];
   
