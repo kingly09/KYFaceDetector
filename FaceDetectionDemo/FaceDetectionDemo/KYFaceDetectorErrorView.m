@@ -57,7 +57,7 @@
   
   
   errorLabel = [[UILabel alloc] init];
-  errorLabel.frame = CGRectMake(0, errorImageView.frame.size.height + 20, self.frame.size.width, 48);
+  errorLabel.frame = CGRectMake(0, errorImageView.frame.size.height + 20, self.frame.size.width, 24);
   errorLabel.font = [UIFont systemFontOfSize:24];
   errorLabel.textColor = RGB16(0x323232);
   errorLabel.textAlignment = NSTextAlignmentCenter;
@@ -67,7 +67,7 @@
   
   
   faceNoteLabel = [[UILabel alloc] init];
-  faceNoteLabel.frame = CGRectMake(0, errorLabel.frame.size.height + errorLabel.frame.origin.y + 20, self.frame.size.width, 48);
+  faceNoteLabel.frame = CGRectMake(0, errorLabel.frame.size.height + errorLabel.frame.origin.y + 20, self.frame.size.width, 24);
   faceNoteLabel.font = [UIFont systemFontOfSize:14];
   faceNoteLabel.textColor = RGB16(0x323232);
   faceNoteLabel.textAlignment = NSTextAlignmentCenter;

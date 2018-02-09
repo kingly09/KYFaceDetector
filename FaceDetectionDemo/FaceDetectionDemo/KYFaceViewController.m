@@ -65,8 +65,8 @@
   myScrollView.userInteractionEnabled = YES;
   myScrollView.showsHorizontalScrollIndicator = NO;
   myScrollView.showsVerticalScrollIndicator = NO;
- // myScrollView.scrollEnabled = NO;
-  myScrollView.contentSize = CGSizeMake(KScreenWidth * 2, KScreenHeight - 64);
+  myScrollView.scrollEnabled = NO;
+  myScrollView.contentSize = CGSizeMake(KScreenWidth * 2, KScreenHeight);
   [self.view addSubview:myScrollView];
   
   leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, KScreenWidth, KScreenHeight - 64)];
@@ -75,6 +75,7 @@
   
   faceDetectorErrorView = [[KYFaceDetectorErrorView alloc] initWithFrame:CGRectMake(KScreenWidth, 0, KScreenWidth,KScreenHeight - 64)];
   faceDetectorErrorView.backgroundColor = [UIColor whiteColor];
+  faceDetectorErrorView.delegate = self;
   //faceDetectorErrorView.hidden = YES;
   [myScrollView addSubview:faceDetectorErrorView];
   
@@ -82,7 +83,7 @@
   
   [self setupCamera];
   
-  faceAnimationView = [[KYFaceAnimationView alloc] initWithFrame:CGRectMake(0, leftView.frame.size.height - 220,leftView.frame.size.width, 220)];
+  faceAnimationView = [[KYFaceAnimationView alloc] initWithFrame:CGRectMake(0, leftView.frame.size.height - 220 ,leftView.frame.size.width, 220)];
   [leftView addSubview:faceAnimationView];
   
   
@@ -198,7 +199,7 @@
     [cancelButton setTitle:@"取消认证" forState:UIControlStateNormal];
     [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [cancelButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
-    [cancelButton addTarget:self action:@selector(cancelButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [cancelButton addTarget:self action:@selector(showFaceDetectorErrorView) forControlEvents:UIControlEventTouchUpInside];
     _cancelButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
   }
   return _cancelButtonItem;
@@ -224,6 +225,12 @@
      self.navigationController.navigationBarHidden = YES;
   }
   
+  [UIView animateWithDuration:0.5 animations:^{
+     myScrollView.contentOffset = CGPointMake(KScreenWidth, 0);
+  } completion:^(BOOL finished) {
+  
+  }];
+  
 }
 
 #pragma mark - KYFaceDetectorErrorViewDelegate
@@ -236,6 +243,18 @@
     self.navigationController.navigationBarHidden = NO;
   }
   
+  faceDetectorErrorView.hidden = YES;
+  
+  
+  [UIView animateWithDuration:0.5 animations:^{
+        myScrollView.contentOffset = CGPointMake(0, 0);
+  } completion:^(BOOL finished) {
+    
+  }];
+  
+  leftView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight);
+  [previewLayer setFrame:[leftView bounds]];
+  faceAnimationView.frame = CGRectMake(0, leftView.frame.size.height - 220 ,leftView.frame.size.width, 220);
 }
 
 /**
@@ -246,8 +265,8 @@
   if (self.navigationController.navigationBarHidden == YES) {
     self.navigationController.navigationBarHidden = NO;
   }
-  
-  
+ 
+  [self cancelButtonClicked:nil];
 }
 
 
@@ -277,12 +296,12 @@
     dispatch_async(dispatch_get_main_queue(), ^{
       [faceAnimationView showAnimationLabel:FaceAnimationTypeFinish];
       
-      if (_delegate && [_delegate respondsToSelector:@selector(faceDetection:withCurrImage:withError:)]) {
-        [_delegate faceDetection:KYFaceDetectionStateSuccess withCurrImage:currImage withError:nil];
-      }
-      
-      [[self navigationController] popViewControllerAnimated:NO];
-      
+//      if (_delegate && [_delegate respondsToSelector:@selector(faceDetection:withCurrImage:withError:)]) {
+//        [_delegate faceDetection:KYFaceDetectionStateSuccess withCurrImage:currImage withError:nil];
+//      }
+//
+//      [[self navigationController] popViewControllerAnimated:NO];
+//
     });
 
   }
