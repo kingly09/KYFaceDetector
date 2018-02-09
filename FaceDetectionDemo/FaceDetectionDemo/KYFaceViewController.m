@@ -18,6 +18,8 @@
 #define KScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define KScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
+#define KAuthTimeout 10.0   //认证超时时间
+
 @interface KYFaceViewController ()<FaceDetectorDelegate,KYFaceDetectorErrorViewDelegate> {
   
   
@@ -35,6 +37,14 @@
   UIScrollView *myScrollView;  //滚动视图
   UIView *leftView;            //左边视图
   KYFaceDetectorErrorView *faceDetectorErrorView;
+  
+  NSTimer *authTimeOutTimer;    //认证时间
+  
+  BOOL isSdkSucc;            //是否sdk检查人脸成功
+  BOOL isNetworkCheckSucc;   //是否网络人脸比对成功
+  
+  BOOL isTimeOut;            //是否认证时间超时
+  
   
 }
 
@@ -92,12 +102,8 @@
 
 - (void)viewWillAppear:(BOOL)animated {
   [super viewWillAppear:animated];
+  [self restSession];
   
-  [faceDetector check];
-  
-  [faceAnimationView showAnimationLabel:FaceAnimationTypeDefault];
-  
-  [session startRunning];
 }
 
 - (void)viewDidDisappear:(BOOL)animated {
@@ -115,6 +121,31 @@
   
 }
 
+/**
+ 注销认证超时的定时器
+ */
+-(void)invalidateAuthTimeOutTimer {
+  
+  if ([authTimeOutTimer isValid]) {
+    [authTimeOutTimer invalidate];
+    authTimeOutTimer = nil;
+  }
+  
+}
+
+
+/**
+ 重新开始检查人脸
+ */
+-(void)restSession {
+  
+  [faceDetector check];
+  
+  [faceAnimationView showAnimationLabel:FaceAnimationTypeDefault];
+  
+  [session startRunning];
+  
+}
 
 - (void)setupCamera {
   
@@ -224,6 +255,8 @@
   [previewLayer setFrame:[leftView bounds]];
   faceAnimationView.frame = CGRectMake(0, leftView.frame.size.height - 220 - 64 ,leftView.frame.size.width, 220);
   
+  [faceAnimationView showAnimationLabel:FaceAnimationTypeDefault];
+  
   faceDetectorErrorView.hidden = NO;
   
   if (self.navigationController.navigationBarHidden == NO) {
@@ -233,8 +266,28 @@
   [UIView animateWithDuration:0.5 animations:^{
      myScrollView.contentOffset = CGPointMake(KScreenWidth, 0);
   } completion:^(BOOL finished) {
-  
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+       [session stopRunning];
+    });
+    
   }];
+  
+}
+
+
+/**
+ 人脸认证的时间超时
+ */
+-(void)authTimeOutTimerMethod {
+  
+  if (isSdkSucc == NO && isNetworkCheckSucc == NO) {
+  
+    isTimeOut = YES;
+    
+    [self showFaceDetectorErrorView];
+    
+  }
   
 }
 
@@ -244,12 +297,14 @@
  */
 -(void)faceDetectorErrorViewWithClickResetAuthButton {
   
+  
   if (self.navigationController.navigationBarHidden == YES) {
     self.navigationController.navigationBarHidden = NO;
   }
  
-  
   faceDetectorErrorView.hidden = YES;
+  
+  [self restSession];
   
   [UIView animateWithDuration:0.5 animations:^{
         myScrollView.contentOffset = CGPointMake(0, 0);
@@ -289,13 +344,22 @@
       [_delegate faceDetection:KYFaceDetectionStateProcess withCurrImage:currImage withError:nil];
     }
     
+    
      dispatch_async(dispatch_get_main_queue(), ^{
           [faceAnimationView showAnimationLabel:FaceAnimationTypeOpenMouth];
+       
+       [self invalidateAuthTimeOutTimer];
+       
+       authTimeOutTimer = [NSTimer scheduledTimerWithTimeInterval:KAuthTimeout target:self selector:@selector(authTimeOutTimerMethod) userInfo:nil repeats:NO];
+       
      });
     
   }else if (motion == MotionMouth){  //通过检测
     
+    isSdkSucc = YES;
+    
     dispatch_async(dispatch_get_main_queue(), ^{
+     
       [faceAnimationView showAnimationLabel:FaceAnimationTypeFinish];
       
 //      if (_delegate && [_delegate respondsToSelector:@selector(faceDetection:withCurrImage:withError:)]) {
