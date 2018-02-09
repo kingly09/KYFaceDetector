@@ -13,6 +13,8 @@
 		BC0A6951202D70B600A7815C /* KYFaceCompare.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A6950202D70B600A7815C /* KYFaceCompare.m */; };
 		BC0A6955202D756700A7815C /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A6952202D756700A7815C /* GTMBase64.m */; };
 		BC0A6958202D75C500A7815C /* NSString+KYCustomMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A6957202D75C500A7815C /* NSString+KYCustomMethod.m */; };
+		BC0A695D202D964300A7815C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0A695C202D964300A7815C /* Accelerate.framework */; };
+		BC0A695F202D982700A7815C /* face.dat in Resources */ = {isa = PBXBuildFile; fileRef = BC0A695E202D982700A7815C /* face.dat */; };
 		BC490B28202BEB4000F463F5 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC490B27202BEB4000F463F5 /* AppDelegate.mm */; };
 		BC490B2B202BEB4000F463F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC490B2A202BEB4000F463F5 /* ViewController.m */; };
 		BC490B2E202BEB4000F463F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC490B2C202BEB4000F463F5 /* Main.storyboard */; };
@@ -22,9 +24,6 @@
 		BC490B39202BEB4100F463F5 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC490B38202BEB4100F463F5 /* main.m */; };
 		BC490B43202BEB4100F463F5 /* FaceDetectionDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC490B42202BEB4100F463F5 /* FaceDetectionDemoTests.m */; };
 		BC490B4E202BEB4100F463F5 /* FaceDetectionDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = BC490B4D202BEB4100F463F5 /* FaceDetectionDemoUITests.m */; };
-		BC490B5F202BF15700F463F5 /* FDFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC490B5C202BF15700F463F5 /* FDFramework.framework */; };
-		BC490B60202BF15700F463F5 /* face.dat in Resources */ = {isa = PBXBuildFile; fileRef = BC490B5D202BF15700F463F5 /* face.dat */; };
-		BC490B61202BF15700F463F5 /* libdlib.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BC490B5E202BF15700F463F5 /* libdlib.a */; };
 		BC490B64202BF26D00F463F5 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC490B63202BF26D00F463F5 /* AVFoundation.framework */; };
 		BC490B66202BF27600F463F5 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC490B65202BF27600F463F5 /* CoreAudio.framework */; };
 		BC490B68202BF28D00F463F5 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC490B67202BF28D00F463F5 /* CoreMedia.framework */; };
@@ -37,6 +36,7 @@
 		BC490B7D202C11D600F463F5 /* photography_face-detection-180.png in Resources */ = {isa = PBXBuildFile; fileRef = BC490B7C202C11D600F463F5 /* photography_face-detection-180.png */; };
 		BC490B80202C1DC300F463F5 /* KYFaceAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC490B7F202C1DC300F463F5 /* KYFaceAnimationView.m */; };
 		BC490B86202C4FA300F463F5 /* KYFaceDetectorErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC490B85202C4FA300F463F5 /* KYFaceDetectorErrorView.m */; };
+		BC5CF492202D9B4C0056AD11 /* FDFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC5CF491202D9B4C0056AD11 /* FDFramework.framework */; };
 		DF58D2EDC795AA921DFEEE22 /* libPods-FaceDetectionDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE030E72745367A5DE6127D /* libPods-FaceDetectionDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +74,8 @@
 		BC0A6954202D756700A7815C /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		BC0A6956202D75C500A7815C /* NSString+KYCustomMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+KYCustomMethod.h"; sourceTree = "<group>"; };
 		BC0A6957202D75C500A7815C /* NSString+KYCustomMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+KYCustomMethod.m"; sourceTree = "<group>"; };
+		BC0A695C202D964300A7815C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		BC0A695E202D982700A7815C /* face.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = face.dat; sourceTree = "<group>"; };
 		BC490B23202BEB4000F463F5 /* FaceDetectionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceDetectionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC490B26202BEB4000F463F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC490B27202BEB4000F463F5 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -91,9 +93,6 @@
 		BC490B49202BEB4100F463F5 /* FaceDetectionDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FaceDetectionDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC490B4D202BEB4100F463F5 /* FaceDetectionDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FaceDetectionDemoUITests.m; sourceTree = "<group>"; };
 		BC490B4F202BEB4100F463F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC490B5C202BF15700F463F5 /* FDFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FDFramework.framework; sourceTree = "<group>"; };
-		BC490B5D202BF15700F463F5 /* face.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = face.dat; sourceTree = "<group>"; };
-		BC490B5E202BF15700F463F5 /* libdlib.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libdlib.a; sourceTree = "<group>"; };
 		BC490B63202BF26D00F463F5 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		BC490B65202BF27600F463F5 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		BC490B67202BF28D00F463F5 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -109,6 +108,7 @@
 		BC490B7F202C1DC300F463F5 /* KYFaceAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYFaceAnimationView.m; sourceTree = "<group>"; };
 		BC490B84202C4FA300F463F5 /* KYFaceDetectorErrorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYFaceDetectorErrorView.h; sourceTree = "<group>"; };
 		BC490B85202C4FA300F463F5 /* KYFaceDetectorErrorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYFaceDetectorErrorView.m; sourceTree = "<group>"; };
+		BC5CF491202D9B4C0056AD11 /* FDFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FDFramework.framework; sourceTree = "<group>"; };
 		DC897D11F88C52D00D61C472 /* Pods-FaceDetectionDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceDetectionDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceDetectionDemoUITests/Pods-FaceDetectionDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F56FD5D055D63ACFC1E74EC5 /* Pods-FaceDetectionDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceDetectionDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceDetectionDemo/Pods-FaceDetectionDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC0A695D202D964300A7815C /* Accelerate.framework in Frameworks */,
+				BC5CF492202D9B4C0056AD11 /* FDFramework.framework in Frameworks */,
 				BC490B72202BF33A00F463F5 /* Foundation.framework in Frameworks */,
 				BC490B70202BF33100F463F5 /* UIKit.framework in Frameworks */,
 				BC490B6E202BF32800F463F5 /* SystemConfiguration.framework in Frameworks */,
@@ -126,8 +128,6 @@
 				BC490B68202BF28D00F463F5 /* CoreMedia.framework in Frameworks */,
 				BC490B66202BF27600F463F5 /* CoreAudio.framework in Frameworks */,
 				BC490B64202BF26D00F463F5 /* AVFoundation.framework in Frameworks */,
-				BC490B61202BF15700F463F5 /* libdlib.a in Frameworks */,
-				BC490B5F202BF15700F463F5 /* FDFramework.framework in Frameworks */,
 				9C49B7B2A1C6188D2688C8B7 /* libPods-FaceDetectionDemo.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -241,9 +241,8 @@
 		BC490B5B202BF15700F463F5 /* FaceSDK */ = {
 			isa = PBXGroup;
 			children = (
-				BC490B5C202BF15700F463F5 /* FDFramework.framework */,
-				BC490B5D202BF15700F463F5 /* face.dat */,
-				BC490B5E202BF15700F463F5 /* libdlib.a */,
+				BC5CF491202D9B4C0056AD11 /* FDFramework.framework */,
+				BC0A695E202D982700A7815C /* face.dat */,
 			);
 			path = FaceSDK;
 			sourceTree = "<group>";
@@ -251,6 +250,7 @@
 		BC490B62202BF26D00F463F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BC0A695C202D964300A7815C /* Accelerate.framework */,
 				BC490B71202BF33A00F463F5 /* Foundation.framework */,
 				BC490B6F202BF33100F463F5 /* UIKit.framework */,
 				BC490B6D202BF32800F463F5 /* SystemConfiguration.framework */,
@@ -385,8 +385,8 @@
 				BC490B7D202C11D600F463F5 /* photography_face-detection-180.png in Resources */,
 				BC490B36202BEB4000F463F5 /* LaunchScreen.storyboard in Resources */,
 				BC490B33202BEB4000F463F5 /* Assets.xcassets in Resources */,
-				BC490B60202BF15700F463F5 /* face.dat in Resources */,
 				BC490B2E202BEB4000F463F5 /* Main.storyboard in Resources */,
+				BC0A695F202D982700A7815C /* face.dat in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
