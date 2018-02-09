@@ -454,22 +454,27 @@
   NSData *oImageData  =  UIImageJPEGRepresentation(_comparedPicture, 0.1);
   NSData *currImageData  = UIImagePNGRepresentation(currImage);
   
-  [[KYFaceCompare share] faceCompareWithImageA:oImageData withImageB:currImageData succ:^(KYFaceCompareRsp *rsp) {
-    if (rsp.similarity >= 75.0) {
-       NSLog(@"比对成功");
-       isNetworkCheckSucc = YES;
-      
-       [self faceDetectionSucc];
-      
-    }else {
-      NSLog(@"比对失败");
+  
+  if (isNetworkCheckSucc == NO) {
+    
+    [[KYFaceCompare share] faceCompareWithImageA:oImageData withImageB:currImageData succ:^(KYFaceCompareRsp *rsp) {
+      if (rsp.similarity >= 75.0) {
+        NSLog(@"比对成功");
+        isNetworkCheckSucc = YES;
+        num = 0;
+        
+        [self faceDetectionSucc];
+        
+      }else {
+        NSLog(@"比对失败");
+        isNetworkCheckSucc = NO;
+      }
+    } fail:^(KYFaceResponse *faceResponse) {
+      NSLog(@"比对异常");
       isNetworkCheckSucc = NO;
-    }
-  } fail:^(KYFaceResponse *faceResponse) {
-     NSLog(@"比对异常");
-     isNetworkCheckSucc = NO;
-  }];
- 
+    }];
+  }
+
   num++;
   if (num > KNetworkAuthNum) {
     

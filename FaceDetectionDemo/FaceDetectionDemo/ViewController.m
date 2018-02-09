@@ -123,12 +123,12 @@
   
   if (faceDetectionState == KYFaceDetectionStateSuccess) {
     
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
-                                                    message:@"人脸比对成功"
-                                                   delegate:self
-                                          cancelButtonTitle:@"确定"
-                                          otherButtonTitles:nil,nil];
-    [alert show];
+//    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
+//                                                    message:@"人脸比对成功"
+//                                                   delegate:self
+//                                          cancelButtonTitle:@"确定"
+//                                          otherButtonTitles:nil,nil];
+//    [alert show];
     
     _zjImageView.image = currImage;
     

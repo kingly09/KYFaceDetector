@@ -12,7 +12,9 @@
 {
   
   UILabel *animationLabel; //动作说明
+  UIImageView *animationDefaultImageView; //默认图片
   UIImageView *animationImageView; //动画图片
+  
   NSTimer *animationTimer;  //张嘴动画
   BOOL  isOpenMouth;   //是否是张嘴
   
@@ -48,6 +50,13 @@
   animationLabel.textAlignment = NSTextAlignmentCenter;
   [self addSubview:animationLabel];
   
+  
+  animationDefaultImageView = [[UIImageView alloc] init];
+  animationDefaultImageView.contentMode =  UIViewContentModeCenter;
+  animationDefaultImageView.contentMode =  UIViewContentModeScaleAspectFill;
+  [self addSubview:animationDefaultImageView];
+  
+  
   //动画图片
   animationImageView = [[UIImageView alloc] init];
   animationImageView.contentMode =  UIViewContentModeCenter;
@@ -74,19 +83,27 @@
   animationLabel.text = animationStr;
   animationLabel.frame = CGRectMake( (self.frame.size.width - (titleLabelRect.size.width + 20))/2, 0, titleLabelRect.size.width + 20, 40);
 
+  
+  animationDefaultImageView.image  = [UIImage imageNamed:@"ic_home_face_default"];
+  animationDefaultImageView.frame = CGRectMake((self.frame.size.width - 150)/2, 55, 150, 150);
+  animationDefaultImageView.hidden = NO;
+  
   if (faceAnimationType == FaceAnimationTypeDefault ) {
     animationImageView.image  = [UIImage imageNamed:@"ic_home_face_default"];
-    animationImageView.frame = CGRectMake((self.frame.size.width - 150)/2, 55, 150, 150);
+    animationImageView.frame = CGRectMake(-150, 55, 150, 150);
+    animationImageView.hidden = YES;
     
     [self invalidateTimer];
     
   }else if (faceAnimationType == FaceAnimationTypeOpenMouth ) {
+    animationDefaultImageView.hidden = YES;
+    animationImageView.hidden = NO;
     animationImageView.image  = [UIImage imageNamed:@"ic_home_face_mouth"];
     isOpenMouth = YES;
+    
     [UIView animateWithDuration:0.5 animations:^{
-        animationImageView.frame = CGRectMake(-150, 55, 150, 150);
+      animationImageView.frame = CGRectMake((self.frame.size.width - 150)/2, 55, 150, 150);
     } completion:^(BOOL finished) {
-       animationImageView.frame = CGRectMake((self.frame.size.width - 150)/2, 55, 150, 150);
       
       [self showOpenMouthAnimation];
       
@@ -94,7 +111,8 @@
     
     
   }else{
-    animationImageView.frame = CGRectMake((self.frame.size.width - 150)/2, 55, 150, 150);
+    animationImageView.hidden = YES;
+    animationImageView.frame = CGRectMake(-150, 55, 150, 150);
     animationImageView.image  = [UIImage imageNamed:@"ic_home_face_default"];
     
     [self invalidateTimer];
@@ -117,8 +135,6 @@
 }
 
 -(void)runLoopOpenMouthAnimation {
-  
-
   
   if ( isOpenMouth == YES) {
     NSLog(@"闭合");
