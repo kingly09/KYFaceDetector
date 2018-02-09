@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "BCTencentCloud.h"
 
 @interface AppDelegate ()
 
@@ -20,6 +21,9 @@
   
   _faceDetector = [[FaceDetector alloc] init];
   [_faceDetector startup];
+  
+  //初始化腾讯云对象
+  [[BCTencentCloud share] setQCloudAppId:@"1255798840" withSecretId:@"AKID3vZzDClhAQRDk28wa2GF0XqukcHhDpX1" withSecretKey:@"MUN2UijV2KOEpBKEuLYXHm23qOhlcEbj"];
   
   return YES;
 }

@@ -44,4 +44,16 @@ typedef void(^KYFaceCompareRspSucc )(KYFaceCompareRsp *rsp);          //人脸�
  */
 +(instancetype)share;
 
+/**
+ 计算两个 Face 的相似性以及五官相似度。
+ 
+ @param imageA A 图片的 资源
+ @param imageB B 图片的 资源
+ @param success 成功回调
+ @param failure 失败回调
+ */
+- (void)faceCompareWithImageA:(NSData *)imageA
+                   withImageB:(NSData *)imageB
+                         succ:(KYFaceCompareRspSucc )success
+                         fail:(KYFaceResponseHander  )failure;
 @end

@@ -52,12 +52,12 @@
   }
   UIImagePickerController *picker = [[UIImagePickerController alloc] init];//初始化
   picker.delegate = self;
-  picker.allowsEditing = NO;//设置不可编辑（无编辑框模式）
+  picker.allowsEditing = YES;//设置不可编辑（无编辑框模式）
   picker.navigationBar.barStyle = UIBarStyleDefault;
   picker.navigationBar.barTintColor = [UIColor whiteColor];
   picker.sourceType = sourceType;
-  picker.cameraDevice = UIImagePickerControllerCameraDeviceRear;
-  [self presentViewController:picker animated:YES completion:^{}];//进入照相界面
+  picker.cameraDevice = UIImagePickerControllerCameraDeviceFront;  //默认前置摄像头
+  [self presentViewController:picker animated:YES completion:^{}]; //进入照相界面
   
 }
 
@@ -74,6 +74,9 @@
   
   _imageView.image = picture;
 }
+
+
+
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
 {
@@ -119,6 +122,13 @@
   
   
   if (faceDetectionState == KYFaceDetectionStateSuccess) {
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"提示"
+                                                    message:@"人脸比对成功"
+                                                   delegate:self
+                                          cancelButtonTitle:@"确定"
+                                          otherButtonTitles:nil,nil];
+    [alert show];
     
     _zjImageView.image = currImage;
     
