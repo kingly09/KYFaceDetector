@@ -573,6 +573,10 @@
   NSLog(@"Should Validate!");
   currImage = image;
   
+ if (![networkAuthTimeOutTimer isValid]) {
+      [self reqNetworkAuthTimeOutTimer];   //进行网络人脸对比
+  }
+  
 }
 
 - (void)motionDetected:(Motion)motion {
@@ -592,8 +596,7 @@
        [faceAnimationView showAnimationLabel:FaceAnimationTypeOpenMouth];
        
        [self invalidateAuthTimeOutTimer];   //进行超时监听
-       [self reqNetworkAuthTimeOutTimer];   //进行网络人脸对比
-       
+     
        authTimeOutTimer = [NSTimer scheduledTimerWithTimeInterval:KAuthTimeout target:self selector:@selector(authTimeOutTimerMethod) userInfo:nil repeats:NO];
        
      });
