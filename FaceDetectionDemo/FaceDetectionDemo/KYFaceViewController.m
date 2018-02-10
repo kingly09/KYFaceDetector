@@ -135,15 +135,15 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-  dispatch_async(dispatch_get_global_queue(0, 0), ^{
-     NSData *imageData = [KYFaceViewController compressImageWithImage:_comparedPicture aimWidth:KScreenWidth * 2 aimLength:3*1024*1024 accuracyOfLength:1024];
-     UIImage *image = [UIImage imageWithData: imageData];
-     imageData = UIImageJPEGRepresentation(image, 0.5);
-    //通知主线程刷新
-    dispatch_async(dispatch_get_main_queue(), ^{
-      comparedPictureData = imageData;
-    });
-  });
+//  dispatch_async(dispatch_get_global_queue(0, 0), ^{
+//     NSData *imageData = [KYFaceViewController compressImageWithImage:_comparedPicture aimWidth:KScreenWidth * 2 aimLength:3*1024*1024 accuracyOfLength:1024];
+//     UIImage *image = [UIImage imageWithData: imageData];
+//     imageData = UIImageJPEGRepresentation(image, 0.5);
+//    //通知主线程刷新
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//      comparedPictureData = imageData;
+//    });
+//  });
 
   self.view.backgroundColor = [UIColor whiteColor];
   self.title = @"人脸识别";
@@ -249,6 +249,12 @@
  重新开始检查人脸
  */
 -(void)restSession {
+  
+  isTimeOut = NO;
+  
+  isSdkSucc = NO;
+  
+  isNetworkCheckSucc = NO;
   
   [faceDetector check];
   
@@ -360,8 +366,9 @@
 
 
 -(void)showFaceDetectorErrorView {
-  
 
+  [session stopRunning];
+  
   leftView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight + 64);
   [previewLayer setFrame:[leftView bounds]];
   faceAnimationView.frame = CGRectMake(0, leftView.frame.size.height - 220 - 64 ,leftView.frame.size.width, 220);
@@ -381,11 +388,7 @@
   [UIView animateWithDuration:0.5 animations:^{
      myScrollView.contentOffset = CGPointMake(KScreenWidth, 0);
   } completion:^(BOOL finished) {
-    
-    dispatch_async(dispatch_get_main_queue(), ^{
-       [session stopRunning];
-    });
-    
+
   }];
   
 }
@@ -396,7 +399,7 @@
  */
 -(void)authTimeOutTimerMethod {
   
-  if (isSdkSucc == NO && isNetworkCheckSucc == NO) {
+  if (isSdkSucc == NO || isNetworkCheckSucc == NO) {
   
     isTimeOut = YES;
     
@@ -448,27 +451,38 @@
     return;
   }
   
+  
+  
   static NSInteger num = 1;
-  NSLog(@"第%ld---%@", (long)num, timer);
   
   NSData *oImageData  =  UIImageJPEGRepresentation(_comparedPicture, 0.1);
   NSData *currImageData  = UIImagePNGRepresentation(currImage);
   
-  
-  if (isNetworkCheckSucc == NO) {
+  if (isNetworkCheckSucc == NO && isTimeOut == NO) {
+    
+    NSLog(@"第%ld人脸比对 %@", (long)num, timer);
     
     [[KYFaceCompare share] faceCompareWithImageA:oImageData withImageB:currImageData succ:^(KYFaceCompareRsp *rsp) {
-      if (rsp.similarity >= 75.0) {
-        NSLog(@"比对成功");
-        isNetworkCheckSucc = YES;
-        num = 0;
+     
+      if (isNetworkCheckSucc == NO) {
         
-        [self faceDetectionSucc];
-        
-      }else {
-        NSLog(@"比对失败");
-        isNetworkCheckSucc = NO;
+        if (rsp.similarity >= 75.0) {
+          
+          NSLog(@"比对成功");
+          isNetworkCheckSucc = YES;
+          
+          num = 1;
+          
+          [self faceDetectionSucc];
+          
+        }else {
+          NSLog(@"比对失败");
+          isNetworkCheckSucc = NO;
+        }
+      }else{
+         NSLog(@"已经比对成功过");
       }
+      
     } fail:^(KYFaceResponse *faceResponse) {
       NSLog(@"比对异常");
       isNetworkCheckSucc = NO;
@@ -492,7 +506,7 @@
  */
 -(void)faceDetectionSucc {
   
-  if (isSdkSucc == YES && isNetworkCheckSucc == YES) {
+  if (isSdkSucc == YES && isNetworkCheckSucc == YES && isTimeOut == NO) {
     
     dispatch_async(dispatch_get_main_queue(), ^{
 
@@ -501,8 +515,10 @@
       if (_delegate && [_delegate respondsToSelector:@selector(faceDetection:withCurrImage:withError:)]) {
         [_delegate faceDetection:KYFaceDetectionStateSuccess withCurrImage:currImage withError:nil];
       }
-      
+
       [[self navigationController] popViewControllerAnimated:NO];
+      
+      [session stopRunning];
       
     });
   }
@@ -557,13 +573,15 @@
   
   if (motion == MotionReady){  //正视完成
     
+    NSLog(@" [faceSDK] 正视完成");
+    
     if (_delegate && [_delegate respondsToSelector:@selector(faceDetection:withCurrImage:withError:)]) {
       [_delegate faceDetection:KYFaceDetectionStateProcess withCurrImage:currImage withError:nil];
     }
     
-    
      dispatch_async(dispatch_get_main_queue(), ^{
-          [faceAnimationView showAnimationLabel:FaceAnimationTypeOpenMouth];
+       
+       [faceAnimationView showAnimationLabel:FaceAnimationTypeOpenMouth];
        
        [self invalidateAuthTimeOutTimer];   //进行超时监听
        [self reqNetworkAuthTimeOutTimer];   //进行网络人脸对比
@@ -575,7 +593,7 @@
   }else if (motion == MotionMouth){  //通过检测
     
     isSdkSucc = YES;
-    
+    NSLog(@" [faceSDK] 已通过检测");
     [self faceDetectionSucc];
 
   }
@@ -589,7 +607,7 @@
 
 - (void)updateText {
   
-  NSLog(@"statusText:%@",[faceDetector statusText]);
+  //NSLog(@"statusText:%@",[faceDetector statusText]);
   
 }
 

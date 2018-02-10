@@ -77,8 +77,7 @@
   }else if (faceAnimationType == FaceAnimationTypeFinish ) {
     animationStr = @"您已通过检查";
   }
-  NSLog(@"animationStr::%@",animationStr);
-  
+ 
    CGRect titleLabelRect = [animationStr boundingRectWithSize:CGSizeMake(self.frame.size.width - 40,CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20]} context:nil];
   animationLabel.text = animationStr;
   animationLabel.frame = CGRectMake( (self.frame.size.width - (titleLabelRect.size.width + 20))/2, 0, titleLabelRect.size.width + 20, 40);
