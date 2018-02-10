@@ -135,15 +135,15 @@
 - (void)viewDidLoad {
   [super viewDidLoad];
   
-//  dispatch_async(dispatch_get_global_queue(0, 0), ^{
-//     NSData *imageData = [KYFaceViewController compressImageWithImage:_comparedPicture aimWidth:KScreenWidth * 2 aimLength:3*1024*1024 accuracyOfLength:1024];
-//     UIImage *image = [UIImage imageWithData: imageData];
-//     imageData = UIImageJPEGRepresentation(image, 0.5);
-//    //通知主线程刷新
-//    dispatch_async(dispatch_get_main_queue(), ^{
-//      comparedPictureData = imageData;
-//    });
-//  });
+  dispatch_async(dispatch_get_global_queue(0, 0), ^{
+     NSData *imageData = [KYFaceViewController compressImageWithImage:_comparedPicture aimWidth:KScreenWidth * 2 aimLength:3*1024*1024 accuracyOfLength:1024];
+     UIImage *image = [UIImage imageWithData: imageData];
+     imageData = UIImageJPEGRepresentation(image, 0.5);
+    //通知主线程刷新
+    dispatch_async(dispatch_get_main_queue(), ^{
+      comparedPictureData = imageData;
+    });
+  });
 
   self.view.backgroundColor = [UIColor whiteColor];
   self.title = @"人脸识别";
@@ -422,9 +422,9 @@
   }
   
   NSMethodSignature *method = [KYFaceViewController instanceMethodSignatureForSelector:@selector(invocationTimeRun:)];
-  
   NSInvocation *invocation = [NSInvocation invocationWithMethodSignature:method];
-  networkAuthTimeOutTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 invocation:invocation repeats:YES];
+  
+  networkAuthTimeOutTimer = [NSTimer scheduledTimerWithTimeInterval:0.5 invocation:invocation repeats:YES];
   
   // 设置方法调用者
   invocation.target = self;
@@ -442,6 +442,16 @@
 
 - (void)invocationTimeRun:(NSTimer *)timer {
   
+  NSData *currImageData  = UIImagePNGRepresentation(currImage);
+  if (currImageData.length ==  0) {
+    NSLog(@"比对图片异常 currImageData");
+    return;
+  }
+  if (comparedPictureData.length ==  0) {
+    NSLog(@"比对图片异常 comparedPictureData");
+    return;
+  }
+  
   //如果是网络检查成功了，取消网络人脸对比的校正
   if (isNetworkCheckSucc == YES) {
     if ([timer isValid]) {
@@ -451,18 +461,13 @@
     return;
   }
   
-  
-  
   static NSInteger num = 1;
-  
-  NSData *oImageData  =  UIImageJPEGRepresentation(_comparedPicture, 0.1);
-  NSData *currImageData  = UIImagePNGRepresentation(currImage);
-  
+
   if (isNetworkCheckSucc == NO && isTimeOut == NO) {
     
     NSLog(@"第%ld人脸比对 %@", (long)num, timer);
     
-    [[KYFaceCompare share] faceCompareWithImageA:oImageData withImageB:currImageData succ:^(KYFaceCompareRsp *rsp) {
+    [[KYFaceCompare share] faceCompareWithImageA:comparedPictureData withImageB:currImageData succ:^(KYFaceCompareRsp *rsp) {
      
       if (isNetworkCheckSucc == NO) {
         
@@ -490,6 +495,7 @@
   }
 
   num++;
+  
   if (num > KNetworkAuthNum) {
     
     if ([timer isValid]) {
@@ -571,9 +577,11 @@
 
 - (void)motionDetected:(Motion)motion {
   
+  NSLog(@"motion::%u",motion);
+  
   if (motion == MotionReady){  //正视完成
     
-    NSLog(@" [faceSDK] 正视完成");
+    NSLog(@"[faceSDK] 正视完成");
     
     if (_delegate && [_delegate respondsToSelector:@selector(faceDetection:withCurrImage:withError:)]) {
       [_delegate faceDetection:KYFaceDetectionStateProcess withCurrImage:currImage withError:nil];
@@ -598,11 +606,8 @@
 
   }
 
-  NSLog(@"motion::%u",motion);
+
   
-//  if (motion == MotionMouth) {
-//      [session stopRunning];
-//  }
 }
 
 - (void)updateText {
