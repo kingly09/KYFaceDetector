@@ -366,7 +366,16 @@
 
 
 -(void)showFaceDetectorErrorView {
-
+  
+  isTimeOut = NO;
+  
+  isSdkSucc = NO;
+  
+  isNetworkCheckSucc = NO;
+  
+  [self invalidateAuthTimeOutTimer];
+  [self invalidateNetworkAuthTimeOutTimer];
+  
   [session stopRunning];
   
   leftView.frame = CGRectMake(0, 0, KScreenWidth, KScreenHeight + 64);
