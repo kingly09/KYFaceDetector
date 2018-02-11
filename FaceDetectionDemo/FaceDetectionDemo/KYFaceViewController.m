@@ -398,11 +398,8 @@
     self.navigationController.navigationBarHidden = YES;
   }
   
-  [UIView animateWithDuration:0.5 animations:^{
-     myScrollView.contentOffset = CGPointMake(KScreenWidth, 0);
-  } completion:^(BOOL finished) {
-
-  }];
+  myScrollView.contentOffset = CGPointMake(KScreenWidth, 0);
+ 
   
 }
 
@@ -572,11 +569,7 @@
   
   [self restSession];
   
-  [UIView animateWithDuration:0.5 animations:^{
-        myScrollView.contentOffset = CGPointMake(0, 0);
-  } completion:^(BOOL finished) {
-    
-  }];
+  myScrollView.contentOffset = CGPointMake(0, 0);
   
 }
 
