@@ -71,11 +71,11 @@
   
   NSString *animationStr = @"";
   if (faceAnimationType == FaceAnimationTypeDefault ) {
-      animationStr = @"请正视屏幕";
+      animationStr = @"请正视前置摄像头";
   }else if (faceAnimationType == FaceAnimationTypeOpenMouth ) {
-      animationStr = @"请张张嘴";
+      animationStr = @"请张嘴";
   }else if (faceAnimationType == FaceAnimationTypeFinish ) {
-    animationStr = @"您已通过检查";
+    animationStr = @"对比验证中...";
   }
  
    CGRect titleLabelRect = [animationStr boundingRectWithSize:CGSizeMake(self.frame.size.width - 40,CGFLOAT_MAX) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:20]} context:nil];

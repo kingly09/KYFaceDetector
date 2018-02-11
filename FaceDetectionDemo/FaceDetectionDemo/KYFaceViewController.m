@@ -429,6 +429,8 @@
  */
 - (void)reqNetworkAuthTimeOutTimer {
   
+  NSLog(@"开始网络请求");
+  
   if ([networkAuthTimeOutTimer isValid]) {
     [networkAuthTimeOutTimer invalidate];
     networkAuthTimeOutTimer = nil;
@@ -455,6 +457,9 @@
 
 - (void)invocationTimeRun:(NSTimer *)timer {
   
+  
+  static NSInteger num = 0;
+
   NSData *currImageData  = UIImagePNGRepresentation(currImage);
   if (currImageData.length ==  0) {
     NSLog(@"比对图片异常 currImageData");
@@ -471,14 +476,29 @@
       [timer invalidate];
       timer = nil;
     }
+    NSLog(@"网络检查成功过");
+    return;
+  }
+ 
+  num++;
+  
+  if (num > KNetworkAuthNum) {
+    
+    if ([timer isValid]) {
+      [timer invalidate];
+      timer = nil;
+    }
+    num = 0;
+    
+    [self showFaceDetectorErrorView];
+    
+    NSLog(@"已经超过3次了");
     return;
   }
   
-  static NSInteger num = 1;
-
   if (isNetworkCheckSucc == NO && isTimeOut == NO) {
     
-    NSLog(@"第%ld次人脸比对 %@", (long)num, timer);
+     NSLog(@"第%ld次人脸比对 %@", (long)num, timer);
     
     [[KYFaceCompare share] faceCompareWithImageA:comparedPictureData withImageB:currImageData succ:^(KYFaceCompareRsp *rsp) {
      
@@ -489,7 +509,7 @@
           NSLog(@"比对成功");
           isNetworkCheckSucc = YES;
           
-          num = 1;
+          num = 0;
           
           [self faceDetectionSucc];
           
@@ -507,16 +527,6 @@
     }];
   }
 
-  num++;
-  
-  if (num > KNetworkAuthNum) {
-    
-    if ([timer isValid]) {
-      [timer invalidate];
-      timer = nil;
-    }
-  }
-  
 }
 
 
@@ -585,11 +595,6 @@
 - (void)shouldValidate:(UIImage *)image {
   NSLog(@"Should Validate!");
   currImage = image;
-  
- if (![networkAuthTimeOutTimer isValid]) {
-      [self reqNetworkAuthTimeOutTimer];   //进行网络人脸对比
-  }
-  
 }
 
 - (void)motionDetected:(Motion)motion {
@@ -608,7 +613,8 @@
        
        [faceAnimationView showAnimationLabel:FaceAnimationTypeOpenMouth];
        
-       [self invalidateAuthTimeOutTimer];   //进行超时监听
+      [self reqNetworkAuthTimeOutTimer];   //进行网络人脸对比
+      [self invalidateAuthTimeOutTimer];   //进行超时监听
      
        authTimeOutTimer = [NSTimer scheduledTimerWithTimeInterval:KAuthTimeout target:self selector:@selector(authTimeOutTimerMethod) userInfo:nil repeats:NO];
        
@@ -618,6 +624,13 @@
     
     isSdkSucc = YES;
     NSLog(@" [faceSDK] 已通过检测");
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+      
+      [faceAnimationView showAnimationLabel:FaceAnimationTypeFinish];
+      
+    });
+    
     [self faceDetectionSucc];
 
   }
