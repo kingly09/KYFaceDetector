@@ -25,7 +25,7 @@ typedef enum {
 - (void)shouldValidate:(UIImage *)image;
 - (void)motionDetected:(Motion)motion;
 - (void)updateText;
-//- (void)test:(CMSampleBufferRef)buffer;
+- (void)draw:(CMSampleBufferRef)buffer;
 @end
 
 

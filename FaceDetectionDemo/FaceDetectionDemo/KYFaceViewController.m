@@ -323,11 +323,15 @@
   [videoDataOutput setVideoSettings:rgbOutputSettings];
   [metaDataOutput setMetadataObjectTypes:[NSArray arrayWithObjects:AVMetadataObjectTypeFace, nil]];
   
+  AVCaptureConnection *videoConnection = [videoDataOutput connectionWithMediaType:AVMediaTypeVideo];
+  [videoConnection setVideoMirrored:YES];
+  [videoConnection setVideoOrientation:AVCaptureVideoOrientationPortrait];
+  
   // add layer
   previewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:session];
-  [previewLayer setBackgroundColor:[[UIColor clearColor] CGColor]];
+  [previewLayer setBackgroundColor:[[UIColor blackColor] CGColor]];
   [previewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
-  
+
   
   CALayer *rootLayer = [leftView layer];
   [rootLayer setMasksToBounds:YES];

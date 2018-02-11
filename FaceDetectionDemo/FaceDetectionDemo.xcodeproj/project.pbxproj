@@ -15,7 +15,6 @@
 		BC0A6958202D75C500A7815C /* NSString+KYCustomMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A6957202D75C500A7815C /* NSString+KYCustomMethod.m */; };
 		BC0A695D202D964300A7815C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0A695C202D964300A7815C /* Accelerate.framework */; };
 		BC0A695F202D982700A7815C /* face.dat in Resources */ = {isa = PBXBuildFile; fileRef = BC0A695E202D982700A7815C /* face.dat */; };
-		BC47D7CB202E82B5006C6FB4 /* FDFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC47D7CA202E82B5006C6FB4 /* FDFramework.framework */; };
 		BC490B28202BEB4000F463F5 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC490B27202BEB4000F463F5 /* AppDelegate.mm */; };
 		BC490B2B202BEB4000F463F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC490B2A202BEB4000F463F5 /* ViewController.m */; };
 		BC490B2E202BEB4000F463F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC490B2C202BEB4000F463F5 /* Main.storyboard */; };
@@ -37,6 +36,7 @@
 		BC490B7D202C11D600F463F5 /* photography_face-detection-180.png in Resources */ = {isa = PBXBuildFile; fileRef = BC490B7C202C11D600F463F5 /* photography_face-detection-180.png */; };
 		BC490B80202C1DC300F463F5 /* KYFaceAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC490B7F202C1DC300F463F5 /* KYFaceAnimationView.m */; };
 		BC490B86202C4FA300F463F5 /* KYFaceDetectorErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC490B85202C4FA300F463F5 /* KYFaceDetectorErrorView.m */; };
+		BCAC4923202FF35A008D4ABA /* FDFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAC4922202FF35A008D4ABA /* FDFramework.framework */; };
 		DF58D2EDC795AA921DFEEE22 /* libPods-FaceDetectionDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0BE030E72745367A5DE6127D /* libPods-FaceDetectionDemoTests.a */; };
 /* End PBXBuildFile section */
 
@@ -76,7 +76,6 @@
 		BC0A6957202D75C500A7815C /* NSString+KYCustomMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+KYCustomMethod.m"; sourceTree = "<group>"; };
 		BC0A695C202D964300A7815C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BC0A695E202D982700A7815C /* face.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = face.dat; sourceTree = "<group>"; };
-		BC47D7CA202E82B5006C6FB4 /* FDFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FDFramework.framework; sourceTree = "<group>"; };
 		BC490B23202BEB4000F463F5 /* FaceDetectionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceDetectionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC490B26202BEB4000F463F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC490B27202BEB4000F463F5 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -109,6 +108,7 @@
 		BC490B7F202C1DC300F463F5 /* KYFaceAnimationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYFaceAnimationView.m; sourceTree = "<group>"; };
 		BC490B84202C4FA300F463F5 /* KYFaceDetectorErrorView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYFaceDetectorErrorView.h; sourceTree = "<group>"; };
 		BC490B85202C4FA300F463F5 /* KYFaceDetectorErrorView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYFaceDetectorErrorView.m; sourceTree = "<group>"; };
+		BCAC4922202FF35A008D4ABA /* FDFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FDFramework.framework; sourceTree = "<group>"; };
 		DC897D11F88C52D00D61C472 /* Pods-FaceDetectionDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceDetectionDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceDetectionDemoUITests/Pods-FaceDetectionDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F56FD5D055D63ACFC1E74EC5 /* Pods-FaceDetectionDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceDetectionDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceDetectionDemo/Pods-FaceDetectionDemo.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,7 +119,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC0A695D202D964300A7815C /* Accelerate.framework in Frameworks */,
-				BC47D7CB202E82B5006C6FB4 /* FDFramework.framework in Frameworks */,
+				BCAC4923202FF35A008D4ABA /* FDFramework.framework in Frameworks */,
 				BC490B72202BF33A00F463F5 /* Foundation.framework in Frameworks */,
 				BC490B70202BF33100F463F5 /* UIKit.framework in Frameworks */,
 				BC490B6E202BF32800F463F5 /* SystemConfiguration.framework in Frameworks */,
@@ -241,7 +241,7 @@
 		BC490B5B202BF15700F463F5 /* FaceSDK */ = {
 			isa = PBXGroup;
 			children = (
-				BC47D7CA202E82B5006C6FB4 /* FDFramework.framework */,
+				BCAC4922202FF35A008D4ABA /* FDFramework.framework */,
 				BC0A695E202D982700A7815C /* face.dat */,
 			);
 			path = FaceSDK;
