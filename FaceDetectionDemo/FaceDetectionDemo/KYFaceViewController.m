@@ -490,8 +490,12 @@
     }
     num = 0;
     
-    [self showFaceDetectorErrorView];
-    
+    if (isNetworkCheckSucc == NO) {
+      
+        [self showFaceDetectorErrorView];
+      
+    }
+
     NSLog(@"已经超过3次了");
     return;
   }
