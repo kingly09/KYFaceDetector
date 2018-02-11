@@ -474,7 +474,7 @@
 
   if (isNetworkCheckSucc == NO && isTimeOut == NO) {
     
-    NSLog(@"第%ld人脸比对 %@", (long)num, timer);
+    NSLog(@"第%ld次人脸比对 %@", (long)num, timer);
     
     [[KYFaceCompare share] faceCompareWithImageA:comparedPictureData withImageB:currImageData succ:^(KYFaceCompareRsp *rsp) {
      
