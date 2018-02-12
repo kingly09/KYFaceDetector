@@ -136,11 +136,11 @@
 -(void)runLoopOpenMouthAnimation {
   
   if ( isOpenMouth == YES) {
-     NSLog(@"[BCFaceSDK] 闭合");
+     NSLog(@"[BCFaceSDK] close mouth");
      isOpenMouth = NO;
      animationImageView.image  = [UIImage imageNamed:@"ic_home_face_default"];
   }else{
-     NSLog(@"[BCFaceSDK] 张开");
+     NSLog(@"[BCFaceSDK] open mouth");
     isOpenMouth = YES;
     animationImageView.image  = [UIImage imageNamed:@"ic_home_face_mouth"];
   }
