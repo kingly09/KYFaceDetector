@@ -6,12 +6,12 @@
 //  Copyright © 2018年 Bambooclound Co., Ltd. All rights reserved.
 //
 
-#import "BCTencentCloud.h"
+#import "KYTencentCloud.h"
 
-@protocol KYFaceResponse <BCTencentCloudResponse>
+@protocol KYFaceResponse <KYTencentCloudResponse>
 @end
 
-@interface KYFaceResponse : BCTencentCloudResponse
+@interface KYFaceResponse : KYTencentCloudResponse
 
 @property (nonatomic,copy) NSString  *url;         // 当前图片的 url
 
@@ -36,7 +36,7 @@ typedef void(^KYFaceResponseHander )(KYFaceResponse *faceResponse);   //人脸�
 typedef void(^KYFaceCompareRspSucc )(KYFaceCompareRsp *rsp);          //人脸比对成功回调
 
 
-@interface KYFaceCompare : BCTencentCloud
+@interface KYFaceCompare : KYTencentCloud
 
 
 /**

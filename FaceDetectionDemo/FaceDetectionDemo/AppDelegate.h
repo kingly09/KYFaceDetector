@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <CoreData/CoreData.h>
 
-#import <FDFramework/FaceDetector.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
@@ -19,7 +18,6 @@
 
 - (void)saveContext;
 
-@property (nonatomic, strong) FaceDetector *faceDetector;
 
 @end
 

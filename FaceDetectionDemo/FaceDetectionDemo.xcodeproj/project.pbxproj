@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		90049F1A783802AA84F0A836 /* libPods-FaceDetectionDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06218DB3227401271533D16F /* libPods-FaceDetectionDemoUITests.a */; };
 		9C49B7B2A1C6188D2688C8B7 /* libPods-FaceDetectionDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C80382C91011B95D5D053DB /* libPods-FaceDetectionDemo.a */; };
-		BC0A694E202D704800A7815C /* BCTencentCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A694D202D704800A7815C /* BCTencentCloud.m */; };
+		BC0A694E202D704800A7815C /* KYTencentCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A694D202D704800A7815C /* KYTencentCloud.m */; };
 		BC0A6951202D70B600A7815C /* KYFaceCompare.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A6950202D70B600A7815C /* KYFaceCompare.m */; };
 		BC0A6955202D756700A7815C /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A6952202D756700A7815C /* GTMBase64.m */; };
 		BC0A6958202D75C500A7815C /* NSString+KYCustomMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A6957202D75C500A7815C /* NSString+KYCustomMethod.m */; };
@@ -66,8 +66,8 @@
 		36A2C86F90B8D22170D6AA55 /* Pods-FaceDetectionDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceDetectionDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FaceDetectionDemoTests/Pods-FaceDetectionDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		3C9B324AB387870028C1BFF3 /* Pods-FaceDetectionDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceDetectionDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceDetectionDemoUITests/Pods-FaceDetectionDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		6D21BF88C56E6B64C35C3B86 /* Pods-FaceDetectionDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FaceDetectionDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FaceDetectionDemoTests/Pods-FaceDetectionDemoTests.release.xcconfig"; sourceTree = "<group>"; };
-		BC0A694C202D704800A7815C /* BCTencentCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCTencentCloud.h; sourceTree = "<group>"; };
-		BC0A694D202D704800A7815C /* BCTencentCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCTencentCloud.m; sourceTree = "<group>"; };
+		BC0A694C202D704800A7815C /* KYTencentCloud.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYTencentCloud.h; sourceTree = "<group>"; };
+		BC0A694D202D704800A7815C /* KYTencentCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYTencentCloud.m; sourceTree = "<group>"; };
 		BC0A694F202D70B600A7815C /* KYFaceCompare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYFaceCompare.h; sourceTree = "<group>"; };
 		BC0A6950202D70B600A7815C /* KYFaceCompare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYFaceCompare.m; sourceTree = "<group>"; };
 		BC0A6952202D756700A7815C /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
@@ -205,8 +205,8 @@
 				BC490B85202C4FA300F463F5 /* KYFaceDetectorErrorView.m */,
 				BC490B7E202C1DC300F463F5 /* KYFaceAnimationView.h */,
 				BC490B7F202C1DC300F463F5 /* KYFaceAnimationView.m */,
-				BC0A694C202D704800A7815C /* BCTencentCloud.h */,
-				BC0A694D202D704800A7815C /* BCTencentCloud.m */,
+				BC0A694C202D704800A7815C /* KYTencentCloud.h */,
+				BC0A694D202D704800A7815C /* KYTencentCloud.m */,
 				BC0A6956202D75C500A7815C /* NSString+KYCustomMethod.h */,
 				BC0A6957202D75C500A7815C /* NSString+KYCustomMethod.m */,
 				BC0A694F202D70B600A7815C /* KYFaceCompare.h */,
@@ -564,7 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BC1457532031214B00AE069D /* BCFaceSDK.mm in Sources */,
-				BC0A694E202D704800A7815C /* BCTencentCloud.m in Sources */,
+				BC0A694E202D704800A7815C /* KYTencentCloud.m in Sources */,
 				BC490B31202BEB4000F463F5 /* FaceDetectionDemo.xcdatamodeld in Sources */,
 				BC490B2B202BEB4000F463F5 /* ViewController.m in Sources */,
 				BC0A6951202D70B600A7815C /* KYFaceCompare.m in Sources */,

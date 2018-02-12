@@ -8,6 +8,14 @@
 
 #import "BCFaceSDK.h"
 #import <FDFramework/FaceDetector.h>
+#import "KYTencentCloud.h"
+
+@interface BCFaceSDK () {
+  
+}
+@property (nonatomic, strong) FaceDetector *faceDetector;
+
+@end
 
 @implementation BCFaceSDK
 
@@ -58,6 +66,39 @@ static BCFaceSDK *sharedFaceSDKObj = nil;
     }
     return self;
   }
+}
+
+
+-(void)initSDK {
+  
+  [self initSDKWithAppId:@"1255798840"
+            withSecretId:@"AKID3vZzDClhAQRDk28wa2GF0XqukcHhDpX1"
+           withSecretKey:@"MUN2UijV2KOEpBKEuLYXHm23qOhlcEbj"];
+  
+}
+
+-(void)initSDKWithAppId:(NSString *)appId
+           withSecretId:(NSString *)secretId
+          withSecretKey:(NSString *)secretKey {
+  
+  if (appId.length == 0 || secretId.length == 0 || secretKey.length == 0) {
+    NSLog(@"[BCFaceSDK] 初始化SDK失败");
+    return;
+  }
+  
+  // 初始化人脸SDK活体检查
+  _faceDetector = [[FaceDetector alloc] init];
+  [_faceDetector startup];
+  
+  //初始化腾讯云对象
+  [[KYTencentCloud share] setQCloudAppId:appId withSecretId:secretId withSecretKey:secretKey];
+  
+}
+
+-(id)getFaceDetector {
+  
+  return _faceDetector;
+  
 }
 
 

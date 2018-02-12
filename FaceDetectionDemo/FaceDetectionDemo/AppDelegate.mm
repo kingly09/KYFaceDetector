@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "BCTencentCloud.h"
+#import "BCFaceSDK.h"
 
 @interface AppDelegate ()
 
@@ -19,11 +19,8 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
   // Override point for customization after application launch.
   
-  _faceDetector = [[FaceDetector alloc] init];
-  [_faceDetector startup];
-  
-  //初始化腾讯云对象
-  [[BCTencentCloud share] setQCloudAppId:@"1255798840" withSecretId:@"AKID3vZzDClhAQRDk28wa2GF0XqukcHhDpX1" withSecretKey:@"MUN2UijV2KOEpBKEuLYXHm23qOhlcEbj"];
+  //初始化
+  [[BCFaceSDK sharedInstance] initSDK];
   
   return YES;
 }

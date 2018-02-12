@@ -1,35 +1,35 @@
 //
-//  BCTencentCloud.m
+//  KYTencentCloud.m
 //  BCEAccountAPP
 //
 //  Created by kingly on 2018/1/11.
 //  Copyright © 2018年 Bamboocloud Co., Ltd. All rights reserved.
 //
 
-#import "BCTencentCloud.h"
+#import "KYTencentCloud.h"
 #import "GTMBase64.h"
 #import "NSString+KYCustomMethod.h"
 
 #define KTencentCloudASEKeyKey  @"2916054684417924"
 
-NSString *const kCosRegiontj  =  @"tj";   // 北京一区（华北）
+NSString *const kFaceCosRegiontj  =  @"tj";   // 北京一区（华北）
 
-NSString *const kCosRegionbj  = @"bj";    // 北京
-NSString *const kCosRegionsh  = @"sh";    // 上海（华东）
-NSString *const kCosRegiongz  = @"gz";    // 广州（华南）
-NSString *const kCosRegioncd  = @"cd";    // 成都（西南）
-NSString *const kCosRegionsgp = @"sgp";   // 新加坡
-NSString *const kCosRegionhk  = @"hk";    // 香港
-NSString *const kCosRegionca  = @"ca";    // 多伦多
-NSString *const kCosRegionger = @"ger";   //法兰克福
+NSString *const kFaceCosRegionbj  = @"bj";    // 北京
+NSString *const kFaceCosRegionsh  = @"sh";    // 上海（华东）
+NSString *const kFaceCosRegiongz  = @"gz";    // 广州（华南）
+NSString *const kFaceCosRegioncd  = @"cd";    // 成都（西南）
+NSString *const kFaceCosRegionsgp = @"sgp";   // 新加坡
+NSString *const kFaceCosRegionhk  = @"hk";    // 香港
+NSString *const kFaceCosRegionca  = @"ca";    // 多伦多
+NSString *const kFaceCosRegionger = @"ger";   //法兰克福
 
 NSString *const kASEKey  = KTencentCloudASEKeyKey;  // 固定的key
 
 
-@implementation BCTencentCloudResponse
+@implementation KYTencentCloudResponse
 @end
 
-@interface BCTencentCloud () {
+@interface KYTencentCloud () {
     
     NSString *srcStrOnce;
     NSData *srcStrOnceData;
@@ -40,14 +40,14 @@ NSString *const kASEKey  = KTencentCloudASEKeyKey;  // 固定的key
 @end
 
 
-@implementation BCTencentCloud
+@implementation KYTencentCloud
 
 /**
  * @brief 实例化对象
  */
 + (instancetype)share
 {
-    return [[BCTencentCloud alloc]init];
+    return [[KYTencentCloud alloc]init];
 }
 
 - (instancetype)init
@@ -58,7 +58,7 @@ NSString *const kASEKey  = KTencentCloudASEKeyKey;  // 固定的key
         _secretKey = @"MUN2UijV2KOEpBKEuLYXHm23qOhlcEbj";
         
         _bucket     = @"epassidcard";    //管理身份证所有图片
-        _region     = kCosRegiongz;      //广州（华南
+        _region     = kFaceCosRegiongz;      //广州（华南
         
         [self setQCloudAppId:_appId withSecretId:_secretId withSecretKey:_secretKey];
     }
@@ -119,7 +119,7 @@ NSString *const kASEKey  = KTencentCloudASEKeyKey;  // 固定的key
 }
 
 
-- (BOOL )checkTencentCloudResponse:(BCTencentCloudResponse *)response {
+- (BOOL )checkTencentCloudResponse:(KYTencentCloudResponse *)response {
   
   if (response.code == 0) {
     return YES;

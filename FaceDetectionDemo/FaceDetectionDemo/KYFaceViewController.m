@@ -7,7 +7,7 @@
 //
 
 #import "KYFaceViewController.h"
-#import "AppDelegate.h"
+#import "BCFaceSDK.h"
 
 #import <AVFoundation/AVFoundation.h>
 #import <FDFramework/FaceDetector.h>
@@ -151,8 +151,7 @@
   [self.navigationItem setRightBarButtonItems:@[self.cancelButtonItem]];
   
   // get the face detector reference
-  AppDelegate *delegate = (AppDelegate *)[[UIApplication sharedApplication] delegate];
-  faceDetector = [delegate faceDetector];
+  faceDetector = (FaceDetector *)[BCFaceSDK sharedInstance].getFaceDetector;
   [faceDetector setDelegate:self];
   
   

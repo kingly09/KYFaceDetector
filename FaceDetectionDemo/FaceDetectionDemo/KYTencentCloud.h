@@ -1,5 +1,5 @@
 //
-//  BCTencentCloud.h
+//  KYTencentCloud.h
 //  BCEAccountAPP
 //
 //  Created by kingly on 2018/1/11.
@@ -8,29 +8,29 @@
 
 #import <Foundation/Foundation.h>
 //地域简称
-extern NSString *const kCosRegiontj;       // 北京一区（华北）
-extern NSString *const kCosRegionbj;       // 北京
-extern NSString *const kCosRegionsh;       // 上海（华东）
-extern NSString *const kCosRegiongz;       // 广州（华南）
-extern NSString *const kCosRegioncd;       // 成都（西南）
-extern NSString *const kCosRegionsgp;      // 新加坡
-extern NSString *const kCosRegionhk;       // 香港
-extern NSString *const kCosRegionca;       // 多伦多
-extern NSString *const kCosRegionger;      // 法兰克福
+extern NSString *const kFaceCosRegiontj;       // 北京一区（华北）
+extern NSString *const kFaceCosRegionbj;       // 北京
+extern NSString *const kFaceCosRegionsh;       // 上海（华东）
+extern NSString *const kFaceCosRegiongz;       // 广州（华南）
+extern NSString *const kFaceCosRegioncd;       // 成都（西南）
+extern NSString *const kFaceCosRegionsgp;      // 新加坡
+extern NSString *const kFaceCosRegionhk;       // 香港
+extern NSString *const kFaceCosRegionca;       // 多伦多
+extern NSString *const kFaceCosRegionger;      // 法兰克福
 
 extern NSString *const kASEKey;           // 密钥
 
-@protocol BCTencentCloudResponse <NSObject>
+@protocol KYTencentCloudResponse <NSObject>
 @end
 
-@interface BCTencentCloudResponse : NSObject
+@interface KYTencentCloudResponse : NSObject
 @property (nonatomic,assign) int code;              //  服务器错误码，0 为成功
 @property (nonatomic,copy) NSString  *message;      // 服务器返回的信息
 @property (nonatomic,strong) NSDictionary   *data;  // 对应对象
 
 @end
 
-@interface BCTencentCloud : NSObject
+@interface KYTencentCloud : NSObject
 
 @property (nonatomic,readwrite) NSString *appId;      // appid
 @property (nonatomic,readwrite) NSString *secretId;   // secretId
@@ -82,9 +82,9 @@ extern NSString *const kASEKey;           // 密钥
 /**
  检查请求返回的错误码
 
- @param response BCTencentCloudResponse
+ @param response KYTencentCloudResponse
  @return YES 请求成功  NO 为请求失败
  */
-- (BOOL )checkTencentCloudResponse:(BCTencentCloudResponse *)response;
+- (BOOL )checkTencentCloudResponse:(KYTencentCloudResponse *)response;
 
 @end
