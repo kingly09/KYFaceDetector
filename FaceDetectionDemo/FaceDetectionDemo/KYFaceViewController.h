@@ -37,7 +37,8 @@ typedef NS_ENUM(NSInteger,KYFaceDetectionState) {
 
 @property (nonatomic,weak) id<KYFaceViewControllerDelegate> delegate;
 
-@property (nonatomic,strong) UIImage *comparedPicture;  // 需要比较的图片
+@property (nonatomic,strong) UIColor *navBackgroundColor;  // 导航条的颜色
+@property (nonatomic,strong) UIImage *comparedPicture;     // 需要比较的图片
 
 
 @end

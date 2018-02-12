@@ -142,8 +142,13 @@
     });
   });
 
-  self.view.backgroundColor = [UIColor whiteColor];
-  self.title = @"人脸识别";
+  if (_navBackgroundColor == nil) {
+       self.view.backgroundColor = [UIColor whiteColor];
+  }
+  if (self.title == nil) {
+      self.title = @"人脸识别";
+  }
+ 
   [self.navigationItem setHidesBackButton:YES];
   [self.navigationItem setRightBarButtonItems:@[self.cancelButtonItem]];
   
@@ -345,7 +350,8 @@
     [cancelButton adjustsImageWhenHighlighted];
     [cancelButton adjustsImageWhenDisabled];
     [cancelButton setTitle:@"取消认证" forState:UIControlStateNormal];
-    [cancelButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [cancelButton setTitleColor:self.navigationController.navigationBar.tintColor forState:UIControlStateNormal];
+    [cancelButton setTitleColor:[self.navigationController.navigationBar.tintColor colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
     [cancelButton.titleLabel setFont:[UIFont systemFontOfSize:14]];
     [cancelButton addTarget:self action:@selector(cancelButtonClicked:) forControlEvents:UIControlEventTouchUpInside];
     _cancelButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelButton];
