@@ -13,6 +13,15 @@
 		BC329F86203147560000BB6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC329F85203147560000BB6E /* Assets.xcassets */; };
 		BC329F89203147560000BB6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC329F87203147560000BB6E /* LaunchScreen.storyboard */; };
 		BC329F8C203147560000BB6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC329F8B203147560000BB6E /* main.m */; };
+		BC329FAF203163250000BB6E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FAE203163250000BB6E /* Accelerate.framework */; };
+		BC329FB1203163360000BB6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FB0203163360000BB6E /* Foundation.framework */; };
+		BC329FB32031633F0000BB6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FB22031633F0000BB6E /* UIKit.framework */; };
+		BC329FB5203163460000BB6E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FB4203163460000BB6E /* SystemConfiguration.framework */; };
+		BC329FB7203163680000BB6E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FB6203163680000BB6E /* CFNetwork.framework */; };
+		BC329FB92031637D0000BB6E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FB82031637D0000BB6E /* Security.framework */; };
+		BC329FBB2031638E0000BB6E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FBA2031638E0000BB6E /* CoreMedia.framework */; };
+		BC329FBD203163A10000BB6E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FBC203163A10000BB6E /* CoreAudio.framework */; };
+		BC329FBF203163B00000BB6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FBE203163B00000BB6E /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +35,15 @@
 		BC329F88203147560000BB6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC329F8A203147560000BB6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC329F8B203147560000BB6E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BC329FAE203163250000BB6E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		BC329FB0203163360000BB6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BC329FB22031633F0000BB6E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BC329FB4203163460000BB6E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BC329FB6203163680000BB6E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		BC329FB82031637D0000BB6E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BC329FBA2031638E0000BB6E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		BC329FBC203163A10000BB6E /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		BC329FBE203163B00000BB6E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +51,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC329FBF203163B00000BB6E /* AVFoundation.framework in Frameworks */,
+				BC329FBD203163A10000BB6E /* CoreAudio.framework in Frameworks */,
+				BC329FBB2031638E0000BB6E /* CoreMedia.framework in Frameworks */,
+				BC329FB92031637D0000BB6E /* Security.framework in Frameworks */,
+				BC329FB7203163680000BB6E /* CFNetwork.framework in Frameworks */,
+				BC329FB5203163460000BB6E /* SystemConfiguration.framework in Frameworks */,
+				BC329FB32031633F0000BB6E /* UIKit.framework in Frameworks */,
+				BC329FB1203163360000BB6E /* Foundation.framework in Frameworks */,
+				BC329FAF203163250000BB6E /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +71,7 @@
 			children = (
 				BC329F7B203147560000BB6E /* BCFaceSDKDemo */,
 				BC329F7A203147560000BB6E /* Products */,
+				BC329FAD203163250000BB6E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -69,6 +97,22 @@
 				BC329F8B203147560000BB6E /* main.m */,
 			);
 			path = BCFaceSDKDemo;
+			sourceTree = "<group>";
+		};
+		BC329FAD203163250000BB6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC329FBE203163B00000BB6E /* AVFoundation.framework */,
+				BC329FBC203163A10000BB6E /* CoreAudio.framework */,
+				BC329FBA2031638E0000BB6E /* CoreMedia.framework */,
+				BC329FB82031637D0000BB6E /* Security.framework */,
+				BC329FB6203163680000BB6E /* CFNetwork.framework */,
+				BC329FB4203163460000BB6E /* SystemConfiguration.framework */,
+				BC329FB22031633F0000BB6E /* UIKit.framework */,
+				BC329FB0203163360000BB6E /* Foundation.framework */,
+				BC329FAE203163250000BB6E /* Accelerate.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
