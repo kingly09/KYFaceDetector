@@ -15,6 +15,7 @@
 		BC0A6958202D75C500A7815C /* NSString+KYCustomMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A6957202D75C500A7815C /* NSString+KYCustomMethod.m */; };
 		BC0A695D202D964300A7815C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0A695C202D964300A7815C /* Accelerate.framework */; };
 		BC0A695F202D982700A7815C /* face.dat in Resources */ = {isa = PBXBuildFile; fileRef = BC0A695E202D982700A7815C /* face.dat */; };
+		BC1457532031214B00AE069D /* BCFaceSDK.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC1457522031214B00AE069D /* BCFaceSDK.mm */; };
 		BC490B28202BEB4000F463F5 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC490B27202BEB4000F463F5 /* AppDelegate.mm */; };
 		BC490B2B202BEB4000F463F5 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC490B2A202BEB4000F463F5 /* ViewController.m */; };
 		BC490B2E202BEB4000F463F5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC490B2C202BEB4000F463F5 /* Main.storyboard */; };
@@ -76,6 +77,8 @@
 		BC0A6957202D75C500A7815C /* NSString+KYCustomMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+KYCustomMethod.m"; sourceTree = "<group>"; };
 		BC0A695C202D964300A7815C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		BC0A695E202D982700A7815C /* face.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = face.dat; sourceTree = "<group>"; };
+		BC1457512031214B00AE069D /* BCFaceSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCFaceSDK.h; sourceTree = "<group>"; };
+		BC1457522031214B00AE069D /* BCFaceSDK.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BCFaceSDK.mm; sourceTree = "<group>"; };
 		BC490B23202BEB4000F463F5 /* FaceDetectionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceDetectionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC490B26202BEB4000F463F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BC490B27202BEB4000F463F5 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
@@ -196,6 +199,8 @@
 				BC490B2A202BEB4000F463F5 /* ViewController.m */,
 				BC490B73202C095800F463F5 /* KYFaceViewController.h */,
 				BC490B74202C095800F463F5 /* KYFaceViewController.m */,
+				BC1457512031214B00AE069D /* BCFaceSDK.h */,
+				BC1457522031214B00AE069D /* BCFaceSDK.mm */,
 				BC490B84202C4FA300F463F5 /* KYFaceDetectorErrorView.h */,
 				BC490B85202C4FA300F463F5 /* KYFaceDetectorErrorView.m */,
 				BC490B7E202C1DC300F463F5 /* KYFaceAnimationView.h */,
@@ -558,6 +563,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC1457532031214B00AE069D /* BCFaceSDK.mm in Sources */,
 				BC0A694E202D704800A7815C /* BCTencentCloud.m in Sources */,
 				BC490B31202BEB4000F463F5 /* FaceDetectionDemo.xcdatamodeld in Sources */,
 				BC490B2B202BEB4000F463F5 /* ViewController.m in Sources */,
