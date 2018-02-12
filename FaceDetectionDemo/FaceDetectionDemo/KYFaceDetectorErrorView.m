@@ -37,7 +37,7 @@
 
 -(void)dealloc {
   
-  NSLog(@"KYFaceDetectorErrorView dealloc");
+  NSLog(@"[BCFaceSDK] KYFaceDetectorErrorView dealloc");
   
   
 }

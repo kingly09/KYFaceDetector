@@ -220,6 +220,10 @@
   
   [self invalidateAuthTimeOutTimer];
   [self invalidateNetworkAuthTimeOutTimer];
+  
+  
+  NSLog(@"[BCFaceSDK] KYFaceViewController dealloc");
+  
 }
 
 /**

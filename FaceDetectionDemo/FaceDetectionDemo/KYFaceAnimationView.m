@@ -34,7 +34,7 @@
 
 -(void)dealloc {
   
-  NSLog(@"KYFaceAnimationView dealloc");
+  NSLog(@"[BCFaceSDK] KYFaceAnimationView dealloc");
   [self invalidateTimer];
   
 }
@@ -136,11 +136,11 @@
 -(void)runLoopOpenMouthAnimation {
   
   if ( isOpenMouth == YES) {
-    NSLog(@"闭合");
+     NSLog(@"[BCFaceSDK] 闭合");
      isOpenMouth = NO;
      animationImageView.image  = [UIImage imageNamed:@"ic_home_face_default"];
   }else{
-     NSLog(@"张开");
+     NSLog(@"[BCFaceSDK] 张开");
     isOpenMouth = YES;
     animationImageView.image  = [UIImage imageNamed:@"ic_home_face_mouth"];
   }

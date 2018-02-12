@@ -11,7 +11,6 @@
 		9C49B7B2A1C6188D2688C8B7 /* libPods-FaceDetectionDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C80382C91011B95D5D053DB /* libPods-FaceDetectionDemo.a */; };
 		BC0A694E202D704800A7815C /* KYTencentCloud.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A694D202D704800A7815C /* KYTencentCloud.m */; };
 		BC0A6951202D70B600A7815C /* KYFaceCompare.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A6950202D70B600A7815C /* KYFaceCompare.m */; };
-		BC0A6955202D756700A7815C /* GTMBase64.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A6952202D756700A7815C /* GTMBase64.m */; };
 		BC0A6958202D75C500A7815C /* NSString+KYCustomMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = BC0A6957202D75C500A7815C /* NSString+KYCustomMethod.m */; };
 		BC0A695D202D964300A7815C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0A695C202D964300A7815C /* Accelerate.framework */; };
 		BC0A695F202D982700A7815C /* face.dat in Resources */ = {isa = PBXBuildFile; fileRef = BC0A695E202D982700A7815C /* face.dat */; };
@@ -70,9 +69,6 @@
 		BC0A694D202D704800A7815C /* KYTencentCloud.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYTencentCloud.m; sourceTree = "<group>"; };
 		BC0A694F202D70B600A7815C /* KYFaceCompare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KYFaceCompare.h; sourceTree = "<group>"; };
 		BC0A6950202D70B600A7815C /* KYFaceCompare.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KYFaceCompare.m; sourceTree = "<group>"; };
-		BC0A6952202D756700A7815C /* GTMBase64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GTMBase64.m; sourceTree = "<group>"; };
-		BC0A6953202D756700A7815C /* GTMDefines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMDefines.h; sourceTree = "<group>"; };
-		BC0A6954202D756700A7815C /* GTMBase64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GTMBase64.h; sourceTree = "<group>"; };
 		BC0A6956202D75C500A7815C /* NSString+KYCustomMethod.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+KYCustomMethod.h"; sourceTree = "<group>"; };
 		BC0A6957202D75C500A7815C /* NSString+KYCustomMethod.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+KYCustomMethod.m"; sourceTree = "<group>"; };
 		BC0A695C202D964300A7815C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -211,9 +207,6 @@
 				BC0A6957202D75C500A7815C /* NSString+KYCustomMethod.m */,
 				BC0A694F202D70B600A7815C /* KYFaceCompare.h */,
 				BC0A6950202D70B600A7815C /* KYFaceCompare.m */,
-				BC0A6954202D756700A7815C /* GTMBase64.h */,
-				BC0A6952202D756700A7815C /* GTMBase64.m */,
-				BC0A6953202D756700A7815C /* GTMDefines.h */,
 				BC490B2C202BEB4000F463F5 /* Main.storyboard */,
 				BC490B7C202C11D600F463F5 /* photography_face-detection-180.png */,
 				BC490B32202BEB4000F463F5 /* Assets.xcassets */,
@@ -572,7 +565,6 @@
 				BC490B39202BEB4100F463F5 /* main.m in Sources */,
 				BC0A6958202D75C500A7815C /* NSString+KYCustomMethod.m in Sources */,
 				BC490B80202C1DC300F463F5 /* KYFaceAnimationView.m in Sources */,
-				BC0A6955202D756700A7815C /* GTMBase64.m in Sources */,
 				BC490B86202C4FA300F463F5 /* KYFaceDetectorErrorView.m in Sources */,
 				BC490B28202BEB4000F463F5 /* AppDelegate.mm in Sources */,
 			);
