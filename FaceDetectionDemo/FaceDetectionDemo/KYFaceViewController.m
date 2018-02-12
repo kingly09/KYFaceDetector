@@ -447,7 +447,6 @@
   NSLog(@"[BCFaceSDK]  start");
 }
 
-
 - (void)invocationTimeRun:(NSTimer *)timer {
   
   static NSInteger num = 0;
@@ -461,6 +460,9 @@
   }
   if (comparedPictureData.length ==  0) {
     NSLog(@"[BCFaceSDK] 比对图片异常 comparedPictureData");
+    if (num == 0) {
+      [self showFaceDetectorErrorView];
+    }
     return;
   }
   
