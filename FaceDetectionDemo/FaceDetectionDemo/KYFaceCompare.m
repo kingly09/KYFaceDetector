@@ -65,7 +65,7 @@
     
   } progress:^(NSProgress * _Nonnull uploadProgress) {
     
-    NSLog(@"uploadProgress:%lld",uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
+    //NSLog(@"uploadProgress:%lld",uploadProgress.completedUnitCount / uploadProgress.totalUnitCount);
     
   } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
     

@@ -105,7 +105,6 @@
       CGFloat midQuality = (maxQuality + minQuality)/2;
       
       if (flag == 6) {
-        NSLog(@"************* %ld ******** %f *************",UIImageJPEGRepresentation(newImage, minQuality).length,minQuality);
         return UIImageJPEGRepresentation(newImage, minQuality);
       }
       flag ++;
@@ -114,15 +113,13 @@
       NSInteger len = imageData.length;
       
       if (len > length+accuracy) {
-        NSLog(@"-----%d------%f------%ld-----",flag,midQuality,len);
+       
         maxQuality = midQuality;
         continue;
       }else if (len < length-accuracy){
-        NSLog(@"-----%d------%f------%ld-----",flag,midQuality,len);
         minQuality = midQuality;
         continue;
       }else{
-        NSLog(@"-----%d------%f------%ld--end",flag,midQuality,len);
         return imageData;
         break;
       }
@@ -138,7 +135,7 @@
   dispatch_async(dispatch_get_global_queue(0, 0), ^{
      NSData *imageData = [KYFaceViewController compressImageWithImage:_comparedPicture aimWidth:KScreenWidth * 2 aimLength:3*1024*1024 accuracyOfLength:1024];
      UIImage *image = [UIImage imageWithData: imageData];
-     imageData = UIImageJPEGRepresentation(image, 0.5);
+     imageData = UIImageJPEGRepresentation(image, 0.1);
     //通知主线程刷新
     dispatch_async(dispatch_get_main_queue(), ^{
       comparedPictureData = imageData;
@@ -425,7 +422,7 @@
  */
 - (void)reqNetworkAuthTimeOutTimer {
   
-  NSLog(@"开始网络请求");
+  NSLog(@"[BCFaceSDK]  开始网络请求");
   
   if ([networkAuthTimeOutTimer isValid]) {
     [networkAuthTimeOutTimer invalidate];
@@ -447,22 +444,23 @@
   [invocation setArgument:&networkAuthTimeOutTimer atIndex:2];
   [invocation invoke];
   
-  NSLog(@"start");
+  NSLog(@"[BCFaceSDK]  start");
 }
 
 
 - (void)invocationTimeRun:(NSTimer *)timer {
   
-  
   static NSInteger num = 0;
 
+  num++;
+  
   NSData *currImageData  = UIImagePNGRepresentation(currImage);
   if (currImageData.length ==  0) {
-    NSLog(@"比对图片异常 currImageData");
+    NSLog(@"[BCFaceSDK] 比对图片异常 currImageData");
     return;
   }
   if (comparedPictureData.length ==  0) {
-    NSLog(@"比对图片异常 comparedPictureData");
+    NSLog(@"[BCFaceSDK] 比对图片异常 comparedPictureData");
     return;
   }
   
@@ -472,12 +470,10 @@
       [timer invalidate];
       timer = nil;
     }
-    NSLog(@"网络检查成功过");
+    NSLog(@"[BCFaceSDK]  网络检查成功过");
     return;
   }
  
-  num++;
-  
   if (num > KNetworkAuthNum) {
     
     if ([timer isValid]) {
@@ -486,19 +482,13 @@
     }
     num = 0;
     
-    if (isNetworkCheckSucc == NO) {
-      
-        [self showFaceDetectorErrorView];
-      
-    }
-
-    NSLog(@"已经超过3次了");
+    NSLog(@"[BCFaceSDK] 已经超过3次了");
     return;
   }
   
   if (isNetworkCheckSucc == NO && isTimeOut == NO) {
     
-     NSLog(@"第%ld次人脸比对 %@", (long)num, timer);
+     NSLog(@"[BCFaceSDK] 第%ld次人脸比对 %@", (long)num, timer);
     
     [[KYFaceCompare share] faceCompareWithImageA:comparedPictureData withImageB:currImageData succ:^(KYFaceCompareRsp *rsp) {
      
@@ -506,24 +496,37 @@
         
         if (rsp.similarity >= 75.0) {
           
-          NSLog(@"比对成功");
+          NSLog(@"[BCFaceSDK] 比对成功");
           isNetworkCheckSucc = YES;
           
-          num = 0;
-          
+          if ([timer isValid]) {
+            [timer invalidate];
+          }
+
           [self faceDetectionSucc];
           
         }else {
-          NSLog(@"比对失败");
+          NSLog(@"[BCFaceSDK] 比对失败");
           isNetworkCheckSucc = NO;
+          
+          if (num == 0) {
+            [self showFaceDetectorErrorView];
+          }
+          
         }
       }else{
-         NSLog(@"已经比对成功过");
+         NSLog(@"[BCFaceSDK] 已经比对成功过");
       }
       
     } fail:^(KYFaceResponse *faceResponse) {
-      NSLog(@"比对异常");
+      NSLog(@"[BCFaceSDK] 比对异常");
       isNetworkCheckSucc = NO;
+      if (num == 0) {
+        
+        [self showFaceDetectorErrorView];
+        
+      }
+      
     }];
   }
 
@@ -589,17 +592,17 @@
 #pragma mark FaceDetector Delegate Methods
 
 - (void)shouldValidate:(UIImage *)image {
-  NSLog(@"Should Validate!");
+  NSLog(@"[BCFaceSDK] Should Validate!");
   currImage = image;
 }
 
 - (void)motionDetected:(Motion)motion {
   
-  NSLog(@"motion::%u",motion);
+  NSLog(@"[BCFaceSDK] motion::%u",motion);
   
   if (motion == MotionReady){  //正视完成
     
-    NSLog(@"[faceSDK] 正视完成");
+    NSLog(@"[BCFaceSDK] 正视完成");
     
     if (_delegate && [_delegate respondsToSelector:@selector(faceDetection:withCurrImage:withError:)]) {
       [_delegate faceDetection:KYFaceDetectionStateProcess withCurrImage:currImage withError:nil];
@@ -619,7 +622,7 @@
   }else if (motion == MotionMouth){  //通过检测
     
     isSdkSucc = YES;
-    NSLog(@" [faceSDK] 已通过检测");
+    NSLog(@"[BCFaceSDK] 已通过检测");
     
     dispatch_async(dispatch_get_main_queue(), ^{
       
@@ -630,8 +633,6 @@
     [self faceDetectionSucc];
 
   }
-
-
   
 }
 
