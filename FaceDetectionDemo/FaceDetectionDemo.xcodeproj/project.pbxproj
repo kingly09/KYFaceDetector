@@ -15,7 +15,6 @@
 		BC0A695D202D964300A7815C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC0A695C202D964300A7815C /* Accelerate.framework */; };
 		BC0A695F202D982700A7815C /* face.dat in Resources */ = {isa = PBXBuildFile; fileRef = BC0A695E202D982700A7815C /* face.dat */; };
 		BC1457532031214B00AE069D /* BCFaceSDK.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC1457522031214B00AE069D /* BCFaceSDK.mm */; };
-		BC329F9B2031621D0000BB6E /* BCFaceSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = BC329F992031621D0000BB6E /* BCFaceSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BC329F9E2031621D0000BB6E /* BCFaceSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329F972031621D0000BB6E /* BCFaceSDK.framework */; };
 		BC329F9F2031621D0000BB6E /* BCFaceSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BC329F972031621D0000BB6E /* BCFaceSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BC329FA42031628F0000BB6E /* FDFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCAC4922202FF35A008D4ABA /* FDFramework.framework */; };
@@ -101,7 +100,6 @@
 		BC1457512031214B00AE069D /* BCFaceSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCFaceSDK.h; sourceTree = "<group>"; };
 		BC1457522031214B00AE069D /* BCFaceSDK.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = BCFaceSDK.mm; sourceTree = "<group>"; };
 		BC329F972031621D0000BB6E /* BCFaceSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BCFaceSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC329F992031621D0000BB6E /* BCFaceSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BCFaceSDK.h; sourceTree = "<group>"; };
 		BC329F9A2031621D0000BB6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC490B23202BEB4000F463F5 /* FaceDetectionDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FaceDetectionDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC490B26202BEB4000F463F5 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -203,7 +201,6 @@
 		BC329F982031621D0000BB6E /* BCFaceSDK */ = {
 			isa = PBXGroup;
 			children = (
-				BC329F992031621D0000BB6E /* BCFaceSDK.h */,
 				BC329F9A2031621D0000BB6E /* Info.plist */,
 			);
 			path = BCFaceSDK;
@@ -319,7 +316,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC329F9B2031621D0000BB6E /* BCFaceSDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,7 +420,7 @@
 					};
 					BC490B22202BEB4000F463F5 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					BC490B3D202BEB4100F463F5 = {
 						CreatedOnToolsVersion = 9.2;
@@ -728,6 +724,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -743,8 +740,9 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bc.BCFaceSDK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bamboocloud.BCFaceSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -756,6 +754,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -771,8 +770,9 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bc.BCFaceSDK;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bamboocloud.BCFaceSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -889,7 +889,8 @@
 			baseConfigurationReference = 0B998D34933067B0ECD78B08 /* Pods-FaceDetectionDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KE5MJRYE2S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -903,8 +904,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bc.FaceDetectionDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.bamboocloud.FaceDetectionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0b662ad6-9660-4a95-bb52-f2c7bb9cff5c";
+				PROVISIONING_PROFILE_SPECIFIER = BambooCloud_ad_Hoc;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -914,7 +917,8 @@
 			baseConfigurationReference = F56FD5D055D63ACFC1E74EC5 /* Pods-FaceDetectionDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = KE5MJRYE2S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -928,8 +932,10 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/FaceSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bc.FaceDetectionDemo;
+				PRODUCT_BUNDLE_IDENTIFIER = cn.bamboocloud.FaceDetectionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "0b662ad6-9660-4a95-bb52-f2c7bb9cff5c";
+				PROVISIONING_PROFILE_SPECIFIER = BambooCloud_ad_Hoc;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
