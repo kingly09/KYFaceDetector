@@ -15,7 +15,7 @@
 #import "KYFaceAnimationView.h"
 #import "KYFaceDetectorErrorView.h"
 
-#import "KYFaceCompare.h"
+#import "KYFaceCompareKit.h"
 
 #define KScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define KScreenHeight ([UIScreen mainScreen].bounds.size.height)
@@ -502,7 +502,7 @@
     
      NSLog(@"[BCFaceSDK] 第%ld次人脸比对 %@", (long)num, timer);
     
-    [[KYFaceCompare share] faceCompareWithImageA:comparedPictureData withImageB:currImageData succ:^(KYFaceCompareRsp *rsp) {
+    [[KYFaceCompareKit share] faceCompareWithImageA:comparedPictureData withImageB:currImageData succ:^(KYFaceCompareRsp *rsp) {
      
       if (isNetworkCheckSucc == NO) {
         

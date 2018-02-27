@@ -8,7 +8,7 @@
 
 #import "BCFaceSDK.h"
 #import <FDFramework/FaceDetector.h>
-#import "KYTencentCloud.h"
+#import "KYFaceCompareKit.h"
 
 @interface BCFaceSDK () {
   
@@ -91,7 +91,7 @@ static BCFaceSDK *sharedFaceSDKObj = nil;
   [_faceDetector startup];
   
   //初始化腾讯云对象
-  [[KYTencentCloud share] setQCloudAppId:appId withSecretId:secretId withSecretKey:secretKey];
+  [[KYFaceCompareKit share] setQCloudAppId:appId withSecretId:secretId withSecretKey:secretKey];
   
 }
 
