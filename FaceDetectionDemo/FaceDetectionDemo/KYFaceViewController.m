@@ -54,6 +54,8 @@
   
   BOOL isTimeOut;            //是否认证时间超时
   
+  BOOL isCancelAuth;          //是否主动取消认证
+  
   NSData *comparedPictureData; //需要比对的图片
 }
 
@@ -215,12 +217,24 @@
   
   faceDetector = nil;
   
-  [myScrollView removeFromSuperview];
-  myScrollView = nil;
-  
+
   [self invalidateAuthTimeOutTimer];
   [self invalidateNetworkAuthTimeOutTimer];
   
+  [faceAnimationView invalidateTimer];
+  [faceAnimationView removeFromSuperview];
+  faceAnimationView = nil;
+  
+  [faceDetectorErrorView removeFromSuperview];
+  faceDetectorErrorView = nil;
+  
+  [leftView removeFromSuperview];
+  leftView = nil;
+  
+  [myScrollView removeFromSuperview];
+  myScrollView = nil;
+  
+  isCancelAuth = NO;
   
   NSLog(@"[BCFaceSDK] KYFaceViewController dealloc");
   
@@ -366,12 +380,27 @@
 
 -(void)cancelButtonClicked:(id)sender {
   
+  isTimeOut = NO;
+  
+  isSdkSucc = NO;
+  
+  isNetworkCheckSucc = NO;
+  
+  isCancelAuth = YES;
+  
+  [self invalidateAuthTimeOutTimer];
+  [self invalidateNetworkAuthTimeOutTimer];
+  
   
   if (_delegate && [_delegate respondsToSelector:@selector(faceDetection:withCurrImage:withError:)]) {
     [_delegate faceDetection:KYFaceDetectionStatecancel withCurrImage:nil withError:nil];
   }
   
-   [[self navigationController] popViewControllerAnimated:NO];
+  NSLog(@"[BCFaceSDK] 取消认证");
+  
+  [[self navigationController] popViewControllerAnimated:NO];
+  
+  
 }
 
 
@@ -513,6 +542,16 @@
     
     [[KYFaceCompareKit share] faceCompareWithImageA:comparedPictureData withImageB:currImageData succ:^(KYFaceCompareRsp *rsp) {
      
+      if (isCancelAuth == YES) {
+        if ([timer isValid]) {
+          [timer invalidate];
+        }
+        isNetworkCheckSucc = NO;
+        isSdkSucc = NO;
+          NSLog(@"[BCFaceSDK] 已经被取消认证了");
+        return;
+      }
+      
       if (isNetworkCheckSucc == NO) {
         
         if (rsp.similarity >= 75.0) {
@@ -642,6 +681,13 @@
     
   }else if (motion == MotionMouth){  //通过检测
     
+    if (isCancelAuth == YES) {
+
+      isNetworkCheckSucc = NO;
+      isSdkSucc = NO;
+      NSLog(@"[BCFaceSDK] 已经被取消认证了");
+      return;
+    }
     isSdkSucc = YES;
     NSLog(@"[BCFaceSDK] 已通过检测");
     

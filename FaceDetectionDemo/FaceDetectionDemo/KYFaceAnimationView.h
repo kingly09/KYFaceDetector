@@ -19,4 +19,7 @@ typedef NS_ENUM(NSInteger,FaceAnimationType) {
 
 -(void)showAnimationLabel:(FaceAnimationType )faceAnimationType;
 
+
+- (void)invalidateTimer;
+
 @end
