@@ -2,7 +2,7 @@
 //  ViewController.h
 //  BCFaceSDKDemo
 //
-//  Created by kingly on 2018/2/12.
+//  Created by kingly on 2018/2/27.
 //  Copyright © 2018年 Bambooclound Co., Ltd. All rights reserved.
 //
 

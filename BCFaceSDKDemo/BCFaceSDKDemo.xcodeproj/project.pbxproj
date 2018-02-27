@@ -7,124 +7,80 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BC329F7E203147560000BB6E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC329F7D203147560000BB6E /* AppDelegate.m */; };
-		BC329F81203147560000BB6E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC329F80203147560000BB6E /* ViewController.m */; };
-		BC329F84203147560000BB6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC329F82203147560000BB6E /* Main.storyboard */; };
-		BC329F86203147560000BB6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC329F85203147560000BB6E /* Assets.xcassets */; };
-		BC329F89203147560000BB6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC329F87203147560000BB6E /* LaunchScreen.storyboard */; };
-		BC329F8C203147560000BB6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC329F8B203147560000BB6E /* main.m */; };
-		BC329FAF203163250000BB6E /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FAE203163250000BB6E /* Accelerate.framework */; };
-		BC329FB1203163360000BB6E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FB0203163360000BB6E /* Foundation.framework */; };
-		BC329FB32031633F0000BB6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FB22031633F0000BB6E /* UIKit.framework */; };
-		BC329FB5203163460000BB6E /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FB4203163460000BB6E /* SystemConfiguration.framework */; };
-		BC329FB7203163680000BB6E /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FB6203163680000BB6E /* CFNetwork.framework */; };
-		BC329FB92031637D0000BB6E /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FB82031637D0000BB6E /* Security.framework */; };
-		BC329FBB2031638E0000BB6E /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FBA2031638E0000BB6E /* CoreMedia.framework */; };
-		BC329FBD203163A10000BB6E /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FBC203163A10000BB6E /* CoreAudio.framework */; };
-		BC329FBF203163B00000BB6E /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC329FBE203163B00000BB6E /* AVFoundation.framework */; };
+		BC31D93A204563A600B3C58D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BC31D939204563A600B3C58D /* AppDelegate.m */; };
+		BC31D93D204563A600B3C58D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC31D93C204563A600B3C58D /* ViewController.m */; };
+		BC31D940204563A600B3C58D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC31D93E204563A600B3C58D /* Main.storyboard */; };
+		BC31D942204563A600B3C58D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC31D941204563A600B3C58D /* Assets.xcassets */; };
+		BC31D945204563A600B3C58D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC31D943204563A600B3C58D /* LaunchScreen.storyboard */; };
+		BC31D948204563A600B3C58D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC31D947204563A600B3C58D /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BC329F79203147560000BB6E /* BCFaceSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCFaceSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		BC329F7C203147560000BB6E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		BC329F7D203147560000BB6E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BC329F7F203147560000BB6E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BC329F80203147560000BB6E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		BC329F83203147560000BB6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BC329F85203147560000BB6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BC329F88203147560000BB6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		BC329F8A203147560000BB6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BC329F8B203147560000BB6E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BC329FAE203163250000BB6E /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
-		BC329FB0203163360000BB6E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		BC329FB22031633F0000BB6E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		BC329FB4203163460000BB6E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		BC329FB6203163680000BB6E /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		BC329FB82031637D0000BB6E /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		BC329FBA2031638E0000BB6E /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
-		BC329FBC203163A10000BB6E /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
-		BC329FBE203163B00000BB6E /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BC31D935204563A600B3C58D /* BCFaceSDKDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCFaceSDKDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC31D938204563A600B3C58D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		BC31D939204563A600B3C58D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		BC31D93B204563A600B3C58D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		BC31D93C204563A600B3C58D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BC31D93F204563A600B3C58D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC31D941204563A600B3C58D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BC31D944204563A600B3C58D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BC31D946204563A600B3C58D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BC31D947204563A600B3C58D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		BC329F76203147560000BB6E /* Frameworks */ = {
+		BC31D932204563A600B3C58D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC329FBF203163B00000BB6E /* AVFoundation.framework in Frameworks */,
-				BC329FBD203163A10000BB6E /* CoreAudio.framework in Frameworks */,
-				BC329FBB2031638E0000BB6E /* CoreMedia.framework in Frameworks */,
-				BC329FB92031637D0000BB6E /* Security.framework in Frameworks */,
-				BC329FB7203163680000BB6E /* CFNetwork.framework in Frameworks */,
-				BC329FB5203163460000BB6E /* SystemConfiguration.framework in Frameworks */,
-				BC329FB32031633F0000BB6E /* UIKit.framework in Frameworks */,
-				BC329FB1203163360000BB6E /* Foundation.framework in Frameworks */,
-				BC329FAF203163250000BB6E /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		BC329F70203147560000BB6E = {
+		BC31D92C204563A600B3C58D = {
 			isa = PBXGroup;
 			children = (
-				BC329F7B203147560000BB6E /* BCFaceSDKDemo */,
-				BC329F7A203147560000BB6E /* Products */,
-				BC329FAD203163250000BB6E /* Frameworks */,
+				BC31D937204563A600B3C58D /* BCFaceSDKDemo */,
+				BC31D936204563A600B3C58D /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		BC329F7A203147560000BB6E /* Products */ = {
+		BC31D936204563A600B3C58D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BC329F79203147560000BB6E /* BCFaceSDKDemo.app */,
+				BC31D935204563A600B3C58D /* BCFaceSDKDemo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BC329F7B203147560000BB6E /* BCFaceSDKDemo */ = {
+		BC31D937204563A600B3C58D /* BCFaceSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
-				BC329F7C203147560000BB6E /* AppDelegate.h */,
-				BC329F7D203147560000BB6E /* AppDelegate.m */,
-				BC329F7F203147560000BB6E /* ViewController.h */,
-				BC329F80203147560000BB6E /* ViewController.m */,
-				BC329F82203147560000BB6E /* Main.storyboard */,
-				BC329F85203147560000BB6E /* Assets.xcassets */,
-				BC329F87203147560000BB6E /* LaunchScreen.storyboard */,
-				BC329F8A203147560000BB6E /* Info.plist */,
-				BC329F8B203147560000BB6E /* main.m */,
+				BC31D938204563A600B3C58D /* AppDelegate.h */,
+				BC31D939204563A600B3C58D /* AppDelegate.m */,
+				BC31D93B204563A600B3C58D /* ViewController.h */,
+				BC31D93C204563A600B3C58D /* ViewController.m */,
+				BC31D93E204563A600B3C58D /* Main.storyboard */,
+				BC31D941204563A600B3C58D /* Assets.xcassets */,
+				BC31D943204563A600B3C58D /* LaunchScreen.storyboard */,
+				BC31D946204563A600B3C58D /* Info.plist */,
+				BC31D947204563A600B3C58D /* main.m */,
 			);
 			path = BCFaceSDKDemo;
-			sourceTree = "<group>";
-		};
-		BC329FAD203163250000BB6E /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				BC329FBE203163B00000BB6E /* AVFoundation.framework */,
-				BC329FBC203163A10000BB6E /* CoreAudio.framework */,
-				BC329FBA2031638E0000BB6E /* CoreMedia.framework */,
-				BC329FB82031637D0000BB6E /* Security.framework */,
-				BC329FB6203163680000BB6E /* CFNetwork.framework */,
-				BC329FB4203163460000BB6E /* SystemConfiguration.framework */,
-				BC329FB22031633F0000BB6E /* UIKit.framework */,
-				BC329FB0203163360000BB6E /* Foundation.framework */,
-				BC329FAE203163250000BB6E /* Accelerate.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BC329F78203147560000BB6E /* BCFaceSDKDemo */ = {
+		BC31D934204563A600B3C58D /* BCFaceSDKDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BC329F8F203147560000BB6E /* Build configuration list for PBXNativeTarget "BCFaceSDKDemo" */;
+			buildConfigurationList = BC31D94B204563A600B3C58D /* Build configuration list for PBXNativeTarget "BCFaceSDKDemo" */;
 			buildPhases = (
-				BC329F75203147560000BB6E /* Sources */,
-				BC329F76203147560000BB6E /* Frameworks */,
-				BC329F77203147560000BB6E /* Resources */,
+				BC31D931204563A600B3C58D /* Sources */,
+				BC31D932204563A600B3C58D /* Frameworks */,
+				BC31D933204563A600B3C58D /* Resources */,
 			);
 			buildRules = (
 			);
@@ -132,26 +88,25 @@
 			);
 			name = BCFaceSDKDemo;
 			productName = BCFaceSDKDemo;
-			productReference = BC329F79203147560000BB6E /* BCFaceSDKDemo.app */;
+			productReference = BC31D935204563A600B3C58D /* BCFaceSDKDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		BC329F71203147560000BB6E /* Project object */ = {
+		BC31D92D204563A600B3C58D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = BC;
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Bambooclound Co., Ltd.";
 				TargetAttributes = {
-					BC329F78203147560000BB6E = {
+					BC31D934204563A600B3C58D = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = BC329F74203147560000BB6E /* Build configuration list for PBXProject "BCFaceSDKDemo" */;
+			buildConfigurationList = BC31D930204563A600B3C58D /* Build configuration list for PBXProject "BCFaceSDKDemo" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -159,55 +114,55 @@
 				en,
 				Base,
 			);
-			mainGroup = BC329F70203147560000BB6E;
-			productRefGroup = BC329F7A203147560000BB6E /* Products */;
+			mainGroup = BC31D92C204563A600B3C58D;
+			productRefGroup = BC31D936204563A600B3C58D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BC329F78203147560000BB6E /* BCFaceSDKDemo */,
+				BC31D934204563A600B3C58D /* BCFaceSDKDemo */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		BC329F77203147560000BB6E /* Resources */ = {
+		BC31D933204563A600B3C58D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC329F89203147560000BB6E /* LaunchScreen.storyboard in Resources */,
-				BC329F86203147560000BB6E /* Assets.xcassets in Resources */,
-				BC329F84203147560000BB6E /* Main.storyboard in Resources */,
+				BC31D945204563A600B3C58D /* LaunchScreen.storyboard in Resources */,
+				BC31D942204563A600B3C58D /* Assets.xcassets in Resources */,
+				BC31D940204563A600B3C58D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		BC329F75203147560000BB6E /* Sources */ = {
+		BC31D931204563A600B3C58D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BC329F81203147560000BB6E /* ViewController.m in Sources */,
-				BC329F8C203147560000BB6E /* main.m in Sources */,
-				BC329F7E203147560000BB6E /* AppDelegate.m in Sources */,
+				BC31D93D204563A600B3C58D /* ViewController.m in Sources */,
+				BC31D948204563A600B3C58D /* main.m in Sources */,
+				BC31D93A204563A600B3C58D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BC329F82203147560000BB6E /* Main.storyboard */ = {
+		BC31D93E204563A600B3C58D /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BC329F83203147560000BB6E /* Base */,
+				BC31D93F204563A600B3C58D /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		BC329F87203147560000BB6E /* LaunchScreen.storyboard */ = {
+		BC31D943204563A600B3C58D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				BC329F88203147560000BB6E /* Base */,
+				BC31D944204563A600B3C58D /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -215,7 +170,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		BC329F8D203147560000BB6E /* Debug */ = {
+		BC31D949204563A600B3C58D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -270,7 +225,7 @@
 			};
 			name = Debug;
 		};
-		BC329F8E203147560000BB6E /* Release */ = {
+		BC31D94A204563A600B3C58D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -319,14 +274,13 @@
 			};
 			name = Release;
 		};
-		BC329F90203147560000BB6E /* Debug */ = {
+		BC31D94C204563A600B3C58D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KE5MJRYE2S;
 				INFOPLIST_FILE = BCFaceSDKDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bc.BCFaceSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -334,14 +288,13 @@
 			};
 			name = Debug;
 		};
-		BC329F91203147560000BB6E /* Release */ = {
+		BC31D94D204563A600B3C58D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KE5MJRYE2S;
 				INFOPLIST_FILE = BCFaceSDKDemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bc.BCFaceSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -352,25 +305,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BC329F74203147560000BB6E /* Build configuration list for PBXProject "BCFaceSDKDemo" */ = {
+		BC31D930204563A600B3C58D /* Build configuration list for PBXProject "BCFaceSDKDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC329F8D203147560000BB6E /* Debug */,
-				BC329F8E203147560000BB6E /* Release */,
+				BC31D949204563A600B3C58D /* Debug */,
+				BC31D94A204563A600B3C58D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BC329F8F203147560000BB6E /* Build configuration list for PBXNativeTarget "BCFaceSDKDemo" */ = {
+		BC31D94B204563A600B3C58D /* Build configuration list for PBXNativeTarget "BCFaceSDKDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BC329F90203147560000BB6E /* Debug */,
-				BC329F91203147560000BB6E /* Release */,
+				BC31D94C204563A600B3C58D /* Debug */,
+				BC31D94D204563A600B3C58D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = BC329F71203147560000BB6E /* Project object */;
+	rootObject = BC31D92D204563A600B3C58D /* Project object */;
 }
