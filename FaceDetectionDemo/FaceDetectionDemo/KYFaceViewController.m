@@ -20,7 +20,7 @@
 #define KScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define KScreenHeight ([UIScreen mainScreen].bounds.size.height)
 
-#define KAuthTimeout 10.0     //认证超时时间
+#define KAuthTimeout 20.0     //认证超时时间
 #define KNetworkAuthNum 3     //网络人脸对比的次数
 
 #define isiPhone (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
@@ -377,6 +377,12 @@
 
 -(void)showFaceDetectorErrorView {
   
+  [self showFaceDetectorErrorView:KYFaceDetectorErrorTypeDefault];
+}
+
+-(void)showFaceDetectorErrorView:(KYFaceDetectorErrorType )errorType {
+  
+  
   isTimeOut = NO;
   
   isSdkSucc = NO;
@@ -397,8 +403,11 @@
   }
   
   [faceAnimationView showAnimationLabel:FaceAnimationTypeDefault];
+
   
   faceDetectorErrorView.hidden = NO;
+  
+  [faceDetectorErrorView updateFaceDetectorErrorText:errorType];
   
   if (self.navigationController.navigationBarHidden == NO) {
     self.navigationController.navigationBarHidden = YES;
@@ -419,8 +428,8 @@
   
     isTimeOut = YES;
     
-    [self showFaceDetectorErrorView];
-    
+    [self showFaceDetectorErrorView:KYFaceDetectorErrorTypeOutTime];
+  
   }
   
 }

@@ -12,7 +12,8 @@ typedef NS_ENUM(NSInteger,KYFaceDetectionState) {
   KYFaceDetectionStateNone    = 0,  //无任何操作
   KYFaceDetectionStateProcess ,     //正在检查
   KYFaceDetectionStateSuccess,      //检查成功
-  KYFaceDetectionStatecancel,      //取消认证
+  KYFaceDetectionStatecancel,       //取消认证
+  KYFaceDetectionStateOutTime,      //认证超时
   KYFaceDetectionStateFailure       //认证失败
 };
 

@@ -405,7 +405,7 @@
 					};
 					BC490B22202BEB4000F463F5 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 					};
 					BC490B3D202BEB4100F463F5 = {
 						CreatedOnToolsVersion = 9.2;
@@ -871,8 +871,8 @@
 			baseConfigurationReference = 0B998D34933067B0ECD78B08 /* Pods-FaceDetectionDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KE5MJRYE2S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -888,8 +888,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.bamboocloud.FaceDetectionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0b662ad6-9660-4a95-bb52-f2c7bb9cff5c";
-				PROVISIONING_PROFILE_SPECIFIER = BambooCloud_ad_Hoc;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -899,8 +899,8 @@
 			baseConfigurationReference = F56FD5D055D63ACFC1E74EC5 /* Pods-FaceDetectionDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KE5MJRYE2S;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -916,8 +916,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cn.bamboocloud.FaceDetectionDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0b662ad6-9660-4a95-bb52-f2c7bb9cff5c";
-				PROVISIONING_PROFILE_SPECIFIER = BambooCloud_ad_Hoc;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

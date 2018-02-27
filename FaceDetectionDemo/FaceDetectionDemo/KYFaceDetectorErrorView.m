@@ -121,4 +121,15 @@
   }
 }
 
+-(void)updateFaceDetectorErrorText:(KYFaceDetectorErrorType )errorType {
+  
+  if (errorType == KYFaceDetectorErrorTypeOutTime) {
+    errorLabel.text = @"人脸验证超时";
+    faceNoteLabel.text = @"当前网络连接超时，在人脸验证时请确保你的网络连接正常";
+  }else{
+    errorLabel.text = @"人脸验证失败";
+    faceNoteLabel.text = @"验证时请保证光线充足、人脸清晰、动作到位";
+  }
+}
+
 @end
