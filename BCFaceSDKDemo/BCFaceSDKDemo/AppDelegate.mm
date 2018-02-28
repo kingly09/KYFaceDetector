@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "BCFaceSDK.h"
+#import <faceSDK/BCFaceSDK.h>
 
 
 @interface AppDelegate ()
