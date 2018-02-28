@@ -8,7 +8,7 @@
 
 #import "BCFaceSDK.h"
 #import <FDFramework/FaceDetector.h>
-#import "KYFaceCompareKit.h"
+#import <KYFaceCompare/KYFaceCompareKit.h>
 
 @interface BCFaceSDK () {
   

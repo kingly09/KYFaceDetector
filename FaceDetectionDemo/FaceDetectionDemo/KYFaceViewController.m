@@ -15,7 +15,7 @@
 #import "KYFaceAnimationView.h"
 #import "KYFaceDetectorErrorView.h"
 
-#import "KYFaceCompareKit.h"
+#import <KYFaceCompare/KYFaceCompareKit.h>
 
 #define KScreenWidth ([UIScreen mainScreen].bounds.size.width)
 #define KScreenHeight ([UIScreen mainScreen].bounds.size.height)

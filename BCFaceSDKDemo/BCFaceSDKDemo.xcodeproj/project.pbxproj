@@ -22,15 +22,15 @@
 		BC558A8E204643A3001428C6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A8D204643A2001428C6 /* MobileCoreServices.framework */; };
 		BC558A92204643E7001428C6 /* FDFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A90204643E7001428C6 /* FDFramework.framework */; };
 		BC558A93204643E7001428C6 /* KYFaceCompare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A91204643E7001428C6 /* KYFaceCompare.framework */; };
-		BC558A9720464417001428C6 /* BCFaceSDK.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC558A9520464416001428C6 /* BCFaceSDK.mm */; };
 		BC558A9820464417001428C6 /* face.dat in Resources */ = {isa = PBXBuildFile; fileRef = BC558A9620464417001428C6 /* face.dat */; };
-		BC558A9F20464425001428C6 /* KYFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558A9920464424001428C6 /* KYFaceViewController.m */; };
-		BC558AA020464425001428C6 /* KYFaceAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558A9A20464424001428C6 /* KYFaceAnimationView.m */; };
-		BC558AA120464425001428C6 /* KYFaceDetectorErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558A9D20464425001428C6 /* KYFaceDetectorErrorView.m */; };
 		BC558AA320464643001428C6 /* photography_face-detection-180.png in Resources */ = {isa = PBXBuildFile; fileRef = BC558AA220464643001428C6 /* photography_face-detection-180.png */; };
 		BC558AA62046466C001428C6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558AA52046466C001428C6 /* ViewController.m */; };
 		BC558AAB20464681001428C6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC558AA720464681001428C6 /* LaunchScreen.storyboard */; };
 		BC558AAC20464681001428C6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC558AA920464681001428C6 /* Main.storyboard */; };
+		BC558AB520464FF2001428C6 /* KYFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558AAD20464FF1001428C6 /* KYFaceViewController.m */; };
+		BC558AB620464FF2001428C6 /* BCFaceSDK.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC558AAE20464FF1001428C6 /* BCFaceSDK.mm */; };
+		BC558AB720464FF2001428C6 /* KYFaceDetectorErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558AB120464FF1001428C6 /* KYFaceDetectorErrorView.m */; };
+		BC558AB820464FF2001428C6 /* KYFaceAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558AB220464FF1001428C6 /* KYFaceAnimationView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,20 +52,20 @@
 		BC558A8D204643A2001428C6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		BC558A90204643E7001428C6 /* FDFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FDFramework.framework; sourceTree = "<group>"; };
 		BC558A91204643E7001428C6 /* KYFaceCompare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KYFaceCompare.framework; sourceTree = "<group>"; };
-		BC558A9420464416001428C6 /* BCFaceSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCFaceSDK.h; sourceTree = "<group>"; };
-		BC558A9520464416001428C6 /* BCFaceSDK.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BCFaceSDK.mm; sourceTree = "<group>"; };
 		BC558A9620464417001428C6 /* face.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = face.dat; sourceTree = "<group>"; };
-		BC558A9920464424001428C6 /* KYFaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYFaceViewController.m; sourceTree = "<group>"; };
-		BC558A9A20464424001428C6 /* KYFaceAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYFaceAnimationView.m; sourceTree = "<group>"; };
-		BC558A9B20464424001428C6 /* KYFaceDetectorErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYFaceDetectorErrorView.h; sourceTree = "<group>"; };
-		BC558A9C20464424001428C6 /* KYFaceAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYFaceAnimationView.h; sourceTree = "<group>"; };
-		BC558A9D20464425001428C6 /* KYFaceDetectorErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYFaceDetectorErrorView.m; sourceTree = "<group>"; };
-		BC558A9E20464425001428C6 /* KYFaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYFaceViewController.h; sourceTree = "<group>"; };
 		BC558AA220464643001428C6 /* photography_face-detection-180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "photography_face-detection-180.png"; path = "../../FaceDetectionDemo/FaceDetectionDemo/photography_face-detection-180.png"; sourceTree = "<group>"; };
 		BC558AA42046466C001428C6 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewController.h; path = ../../FaceDetectionDemo/FaceDetectionDemo/ViewController.h; sourceTree = "<group>"; };
 		BC558AA52046466C001428C6 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewController.m; path = ../../FaceDetectionDemo/FaceDetectionDemo/ViewController.m; sourceTree = "<group>"; };
 		BC558AA820464681001428C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../FaceDetectionDemo/FaceDetectionDemo/Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC558AAA20464681001428C6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../FaceDetectionDemo/FaceDetectionDemo/Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BC558AAD20464FF1001428C6 /* KYFaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYFaceViewController.m; path = ../../../FaceDetectionDemo/FaceDetectionDemo/KYFaceViewController.m; sourceTree = "<group>"; };
+		BC558AAE20464FF1001428C6 /* BCFaceSDK.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = BCFaceSDK.mm; path = ../../../FaceDetectionDemo/FaceDetectionDemo/BCFaceSDK.mm; sourceTree = "<group>"; };
+		BC558AAF20464FF1001428C6 /* BCFaceSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BCFaceSDK.h; path = ../../../FaceDetectionDemo/FaceDetectionDemo/BCFaceSDK.h; sourceTree = "<group>"; };
+		BC558AB020464FF1001428C6 /* KYFaceDetectorErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYFaceDetectorErrorView.h; path = ../../../FaceDetectionDemo/FaceDetectionDemo/KYFaceDetectorErrorView.h; sourceTree = "<group>"; };
+		BC558AB120464FF1001428C6 /* KYFaceDetectorErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYFaceDetectorErrorView.m; path = ../../../FaceDetectionDemo/FaceDetectionDemo/KYFaceDetectorErrorView.m; sourceTree = "<group>"; };
+		BC558AB220464FF1001428C6 /* KYFaceAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KYFaceAnimationView.m; path = ../../../FaceDetectionDemo/FaceDetectionDemo/KYFaceAnimationView.m; sourceTree = "<group>"; };
+		BC558AB320464FF1001428C6 /* KYFaceAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYFaceAnimationView.h; path = ../../../FaceDetectionDemo/FaceDetectionDemo/KYFaceAnimationView.h; sourceTree = "<group>"; };
+		BC558AB420464FF1001428C6 /* KYFaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KYFaceViewController.h; path = ../../../FaceDetectionDemo/FaceDetectionDemo/KYFaceViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,14 +146,14 @@
 		BC558A8F204643B4001428C6 /* SDK */ = {
 			isa = PBXGroup;
 			children = (
-				BC558A9420464416001428C6 /* BCFaceSDK.h */,
-				BC558A9520464416001428C6 /* BCFaceSDK.mm */,
-				BC558A9C20464424001428C6 /* KYFaceAnimationView.h */,
-				BC558A9A20464424001428C6 /* KYFaceAnimationView.m */,
-				BC558A9B20464424001428C6 /* KYFaceDetectorErrorView.h */,
-				BC558A9D20464425001428C6 /* KYFaceDetectorErrorView.m */,
-				BC558A9E20464425001428C6 /* KYFaceViewController.h */,
-				BC558A9920464424001428C6 /* KYFaceViewController.m */,
+				BC558AAF20464FF1001428C6 /* BCFaceSDK.h */,
+				BC558AAE20464FF1001428C6 /* BCFaceSDK.mm */,
+				BC558AB320464FF1001428C6 /* KYFaceAnimationView.h */,
+				BC558AB220464FF1001428C6 /* KYFaceAnimationView.m */,
+				BC558AB020464FF1001428C6 /* KYFaceDetectorErrorView.h */,
+				BC558AB120464FF1001428C6 /* KYFaceDetectorErrorView.m */,
+				BC558AB420464FF1001428C6 /* KYFaceViewController.h */,
+				BC558AAD20464FF1001428C6 /* KYFaceViewController.m */,
 				BC558A9620464417001428C6 /* face.dat */,
 				BC558A90204643E7001428C6 /* FDFramework.framework */,
 				BC558A91204643E7001428C6 /* KYFaceCompare.framework */,
@@ -234,13 +234,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC558AB820464FF2001428C6 /* KYFaceAnimationView.m in Sources */,
+				BC558AB720464FF2001428C6 /* KYFaceDetectorErrorView.m in Sources */,
 				BC558AA62046466C001428C6 /* ViewController.m in Sources */,
+				BC558AB620464FF2001428C6 /* BCFaceSDK.mm in Sources */,
 				BC31D948204563A600B3C58D /* main.m in Sources */,
-				BC558A9F20464425001428C6 /* KYFaceViewController.m in Sources */,
-				BC558A9720464417001428C6 /* BCFaceSDK.mm in Sources */,
-				BC558AA120464425001428C6 /* KYFaceDetectorErrorView.m in Sources */,
-				BC558AA020464425001428C6 /* KYFaceAnimationView.m in Sources */,
 				BC31D93A204563A600B3C58D /* AppDelegate.mm in Sources */,
+				BC558AB520464FF2001428C6 /* KYFaceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
