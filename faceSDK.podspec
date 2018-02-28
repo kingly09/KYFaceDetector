@@ -7,8 +7,8 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'BCFaceSDK'
-  s.version          = '0.1.5'
+  s.name             = 'faceSDK'
+  s.version          = '0.1.1'
   s.summary          = 'BCFaceSDK是一个人脸识别类库'
   s.homepage         = 'https://github.com/kingly09/'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
@@ -17,20 +17,17 @@ Pod::Spec.new do |s|
 
   s.ios.deployment_target = '8.0'
   s.requires_arc = true
-  s.source_files = 'BCFaceSDK/Classes/**/*','BCFaceSDK/Assets/FaceSDK/**/*.h'
-  
-   s.resource_bundles = {
-     'BCFaceSDK' => ['BCFaceSDK/Assets/**/*.{png,jpg}']
+  s.source_files = 'BCFaceSDKDemo/BCFaceSDKDemo/SDK/**/*.{h,mm,m}'  
+  s.resource_bundles = {
+     'BCFaceSDK' => ['BCFaceSDKDemo/BCFaceSDKDemo/Assets.xcassets/UI/**/*.{png,jpg}']
    }
 
-  s.public_header_files = 'BCFaceSDK/Classes/public/*.h'
+  s.public_header_files = 'BCFaceSDKDemo/BCFaceSDKDemo/SDK/public/*.h'
   
   s.frameworks = 'UIKit','Accelerate','Foundation','SystemConfiguration','CFNetwork','Security','CoreMedia','CoreAudio','AVFoundation','MobileCoreServices'
                  
   s.ios.vendored_frameworks = 'BCFaceSDKDemo/BCFaceSDKDemo/SDK/**/*.framework'
   #s.ios.vendored_libraries  = 'BCFaceSDK/Assets/**/*.a'
-                 
-  s.dependency 'AFNetworking', '~> 3.1.0'
-  s.dependency 'GTMBase64', '~> 1.0.0'
+
   
 end
