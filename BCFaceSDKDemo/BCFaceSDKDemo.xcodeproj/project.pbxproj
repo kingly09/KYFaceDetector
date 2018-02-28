@@ -13,6 +13,23 @@
 		BC31D942204563A600B3C58D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC31D941204563A600B3C58D /* Assets.xcassets */; };
 		BC31D945204563A600B3C58D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC31D943204563A600B3C58D /* LaunchScreen.storyboard */; };
 		BC31D948204563A600B3C58D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BC31D947204563A600B3C58D /* main.m */; };
+		BC558A7C20464327001428C6 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A7B20464327001428C6 /* Accelerate.framework */; };
+		BC558A7E2046432E001428C6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A7D2046432E001428C6 /* Foundation.framework */; };
+		BC558A802046433A001428C6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A7F2046433A001428C6 /* UIKit.framework */; };
+		BC558A8220464341001428C6 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A8120464341001428C6 /* SystemConfiguration.framework */; };
+		BC558A842046434A001428C6 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A832046434A001428C6 /* Security.framework */; };
+		BC558A8620464354001428C6 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A8520464354001428C6 /* AVFoundation.framework */; };
+		BC558A882046436B001428C6 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A872046436B001428C6 /* CoreMedia.framework */; };
+		BC558A8A20464378001428C6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A8920464378001428C6 /* CoreVideo.framework */; };
+		BC558A8C20464381001428C6 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A8B20464381001428C6 /* CFNetwork.framework */; };
+		BC558A8E204643A3001428C6 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A8D204643A2001428C6 /* MobileCoreServices.framework */; };
+		BC558A92204643E7001428C6 /* FDFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A90204643E7001428C6 /* FDFramework.framework */; };
+		BC558A93204643E7001428C6 /* KYFaceCompare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A91204643E7001428C6 /* KYFaceCompare.framework */; };
+		BC558A9720464417001428C6 /* BCFaceSDK.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC558A9520464416001428C6 /* BCFaceSDK.mm */; };
+		BC558A9820464417001428C6 /* face.dat in Resources */ = {isa = PBXBuildFile; fileRef = BC558A9620464417001428C6 /* face.dat */; };
+		BC558A9F20464425001428C6 /* KYFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558A9920464424001428C6 /* KYFaceViewController.m */; };
+		BC558AA020464425001428C6 /* KYFaceAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558A9A20464424001428C6 /* KYFaceAnimationView.m */; };
+		BC558AA120464425001428C6 /* KYFaceDetectorErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558A9D20464425001428C6 /* KYFaceDetectorErrorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +43,27 @@
 		BC31D944204563A600B3C58D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC31D946204563A600B3C58D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC31D947204563A600B3C58D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BC558A7B20464327001428C6 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		BC558A7D2046432E001428C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BC558A7F2046433A001428C6 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BC558A8120464341001428C6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BC558A832046434A001428C6 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BC558A8520464354001428C6 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		BC558A872046436B001428C6 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		BC558A8920464378001428C6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		BC558A8B20464381001428C6 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		BC558A8D204643A2001428C6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		BC558A90204643E7001428C6 /* FDFramework.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FDFramework.framework; sourceTree = "<group>"; };
+		BC558A91204643E7001428C6 /* KYFaceCompare.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KYFaceCompare.framework; sourceTree = "<group>"; };
+		BC558A9420464416001428C6 /* BCFaceSDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCFaceSDK.h; sourceTree = "<group>"; };
+		BC558A9520464416001428C6 /* BCFaceSDK.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BCFaceSDK.mm; sourceTree = "<group>"; };
+		BC558A9620464417001428C6 /* face.dat */ = {isa = PBXFileReference; lastKnownFileType = file; path = face.dat; sourceTree = "<group>"; };
+		BC558A9920464424001428C6 /* KYFaceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYFaceViewController.m; sourceTree = "<group>"; };
+		BC558A9A20464424001428C6 /* KYFaceAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYFaceAnimationView.m; sourceTree = "<group>"; };
+		BC558A9B20464424001428C6 /* KYFaceDetectorErrorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYFaceDetectorErrorView.h; sourceTree = "<group>"; };
+		BC558A9C20464424001428C6 /* KYFaceAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYFaceAnimationView.h; sourceTree = "<group>"; };
+		BC558A9D20464425001428C6 /* KYFaceDetectorErrorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KYFaceDetectorErrorView.m; sourceTree = "<group>"; };
+		BC558A9E20464425001428C6 /* KYFaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KYFaceViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +71,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC558A8E204643A3001428C6 /* MobileCoreServices.framework in Frameworks */,
+				BC558A92204643E7001428C6 /* FDFramework.framework in Frameworks */,
+				BC558A8C20464381001428C6 /* CFNetwork.framework in Frameworks */,
+				BC558A8A20464378001428C6 /* CoreVideo.framework in Frameworks */,
+				BC558A882046436B001428C6 /* CoreMedia.framework in Frameworks */,
+				BC558A8620464354001428C6 /* AVFoundation.framework in Frameworks */,
+				BC558A842046434A001428C6 /* Security.framework in Frameworks */,
+				BC558A8220464341001428C6 /* SystemConfiguration.framework in Frameworks */,
+				BC558A802046433A001428C6 /* UIKit.framework in Frameworks */,
+				BC558A93204643E7001428C6 /* KYFaceCompare.framework in Frameworks */,
+				BC558A7E2046432E001428C6 /* Foundation.framework in Frameworks */,
+				BC558A7C20464327001428C6 /* Accelerate.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +94,7 @@
 			children = (
 				BC31D937204563A600B3C58D /* BCFaceSDKDemo */,
 				BC31D936204563A600B3C58D /* Products */,
+				BC558A7A20464327001428C6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +109,7 @@
 		BC31D937204563A600B3C58D /* BCFaceSDKDemo */ = {
 			isa = PBXGroup;
 			children = (
+				BC558A8F204643B4001428C6 /* SDK */,
 				BC31D938204563A600B3C58D /* AppDelegate.h */,
 				BC31D939204563A600B3C58D /* AppDelegate.m */,
 				BC31D93B204563A600B3C58D /* ViewController.h */,
@@ -69,6 +121,41 @@
 				BC31D947204563A600B3C58D /* main.m */,
 			);
 			path = BCFaceSDKDemo;
+			sourceTree = "<group>";
+		};
+		BC558A7A20464327001428C6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BC558A8D204643A2001428C6 /* MobileCoreServices.framework */,
+				BC558A8B20464381001428C6 /* CFNetwork.framework */,
+				BC558A8920464378001428C6 /* CoreVideo.framework */,
+				BC558A872046436B001428C6 /* CoreMedia.framework */,
+				BC558A8520464354001428C6 /* AVFoundation.framework */,
+				BC558A832046434A001428C6 /* Security.framework */,
+				BC558A8120464341001428C6 /* SystemConfiguration.framework */,
+				BC558A7F2046433A001428C6 /* UIKit.framework */,
+				BC558A7D2046432E001428C6 /* Foundation.framework */,
+				BC558A7B20464327001428C6 /* Accelerate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BC558A8F204643B4001428C6 /* SDK */ = {
+			isa = PBXGroup;
+			children = (
+				BC558A9420464416001428C6 /* BCFaceSDK.h */,
+				BC558A9520464416001428C6 /* BCFaceSDK.mm */,
+				BC558A9C20464424001428C6 /* KYFaceAnimationView.h */,
+				BC558A9A20464424001428C6 /* KYFaceAnimationView.m */,
+				BC558A9B20464424001428C6 /* KYFaceDetectorErrorView.h */,
+				BC558A9D20464425001428C6 /* KYFaceDetectorErrorView.m */,
+				BC558A9E20464425001428C6 /* KYFaceViewController.h */,
+				BC558A9920464424001428C6 /* KYFaceViewController.m */,
+				BC558A9620464417001428C6 /* face.dat */,
+				BC558A90204643E7001428C6 /* FDFramework.framework */,
+				BC558A91204643E7001428C6 /* KYFaceCompare.framework */,
+			);
+			path = SDK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,6 +218,7 @@
 			files = (
 				BC31D945204563A600B3C58D /* LaunchScreen.storyboard in Resources */,
 				BC31D942204563A600B3C58D /* Assets.xcassets in Resources */,
+				BC558A9820464417001428C6 /* face.dat in Resources */,
 				BC31D940204563A600B3C58D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +232,10 @@
 			files = (
 				BC31D93D204563A600B3C58D /* ViewController.m in Sources */,
 				BC31D948204563A600B3C58D /* main.m in Sources */,
+				BC558A9F20464425001428C6 /* KYFaceViewController.m in Sources */,
+				BC558A9720464417001428C6 /* BCFaceSDK.mm in Sources */,
+				BC558AA120464425001428C6 /* KYFaceDetectorErrorView.m in Sources */,
+				BC558AA020464425001428C6 /* KYFaceAnimationView.m in Sources */,
 				BC31D93A204563A600B3C58D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -280,7 +372,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KE5MJRYE2S;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BCFaceSDKDemo/SDK",
+				);
 				INFOPLIST_FILE = BCFaceSDKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bc.BCFaceSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -294,7 +392,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KE5MJRYE2S;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BCFaceSDKDemo/SDK",
+				);
 				INFOPLIST_FILE = BCFaceSDKDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bc.BCFaceSDKDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
