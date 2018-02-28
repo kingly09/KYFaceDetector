@@ -49,6 +49,31 @@
 		BC558B1F20467A54001428C6 /* KYFaceAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558AC92046579A001428C6 /* KYFaceAnimationView.m */; };
 		BC558B2020467A58001428C6 /* KYFaceDetectorErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558ACC2046579B001428C6 /* KYFaceDetectorErrorView.m */; };
 		BC558B2120467AA5001428C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC31D941204563A600B3C58D /* Assets.xcassets */; };
+		BCC1E0ED204688BE0092C463 /* BCFaceSDK.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BC558AD420465A77001428C6 /* BCFaceSDK.h */; };
+		BCC1E0EE204688D60092C463 /* KYFaceViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BC558AD220465A77001428C6 /* KYFaceViewController.h */; };
+		BCC1E0F7204689BB0092C463 /* face.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC1E0F6204689BB0092C463 /* face.m */; };
+		BCC1E0F8204689BB0092C463 /* face.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BCC1E0F5204689BB0092C463 /* face.h */; };
+		BCC1E0FD20468A000092C463 /* FDFramework.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A90204643E7001428C6 /* FDFramework.framework */; };
+		BCC1E0FE20468A000092C463 /* KYFaceCompare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A91204643E7001428C6 /* KYFaceCompare.framework */; };
+		BCC1E0FF20468A090092C463 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A7B20464327001428C6 /* Accelerate.framework */; };
+		BCC1E10020468A350092C463 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A8D204643A2001428C6 /* MobileCoreServices.framework */; };
+		BCC1E10120468A3B0092C463 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A8B20464381001428C6 /* CFNetwork.framework */; };
+		BCC1E10220468A450092C463 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A8520464354001428C6 /* AVFoundation.framework */; };
+		BCC1E10420468A4E0092C463 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCC1E10320468A4E0092C463 /* CoreAudio.framework */; };
+		BCC1E10520468A540092C463 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A872046436B001428C6 /* CoreMedia.framework */; };
+		BCC1E10620468A650092C463 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A832046434A001428C6 /* Security.framework */; };
+		BCC1E10720468A6B0092C463 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A8120464341001428C6 /* SystemConfiguration.framework */; };
+		BCC1E10820468A750092C463 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A7F2046433A001428C6 /* UIKit.framework */; };
+		BCC1E10920468A8D0092C463 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A7D2046432E001428C6 /* Foundation.framework */; };
+		BCC1E10A20468AA60092C463 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC558A8920464378001428C6 /* CoreVideo.framework */; };
+		BCC1E10B20468AC40092C463 /* BCFaceSDK.mm in Sources */ = {isa = PBXBuildFile; fileRef = BC558AD320465A77001428C6 /* BCFaceSDK.mm */; };
+		BCC1E10C20468AC90092C463 /* BCFaceSDK.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BC558AD420465A77001428C6 /* BCFaceSDK.h */; };
+		BCC1E10E20468AEB0092C463 /* KYFaceViewController.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = BC558AD220465A77001428C6 /* KYFaceViewController.h */; };
+		BCC1E10F20468AEF0092C463 /* KYFaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558AD120465A77001428C6 /* KYFaceViewController.m */; };
+		BCC1E11020468AFF0092C463 /* KYFaceAnimationView.h in Headers */ = {isa = PBXBuildFile; fileRef = BC558ACB2046579B001428C6 /* KYFaceAnimationView.h */; };
+		BCC1E11120468B050092C463 /* KYFaceAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558AC92046579A001428C6 /* KYFaceAnimationView.m */; };
+		BCC1E11220468B0B0092C463 /* KYFaceDetectorErrorView.h in Headers */ = {isa = PBXBuildFile; fileRef = BC558ACD2046579B001428C6 /* KYFaceDetectorErrorView.h */; };
+		BCC1E11320468B0F0092C463 /* KYFaceDetectorErrorView.m in Sources */ = {isa = PBXBuildFile; fileRef = BC558ACC2046579B001428C6 /* KYFaceDetectorErrorView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +96,29 @@
 				BC558B082046794A001428C6 /* faceSDK.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC1E0EC2046837A0092C463 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				BCC1E0EE204688D60092C463 /* KYFaceViewController.h in CopyFiles */,
+				BCC1E0ED204688BE0092C463 /* BCFaceSDK.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC1E0F1204689BB0092C463 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				BCC1E0F8204689BB0092C463 /* face.h in CopyFiles */,
+				BCC1E10C20468AC90092C463 /* BCFaceSDK.h in CopyFiles */,
+				BCC1E10E20468AEB0092C463 /* KYFaceViewController.h in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -111,6 +159,10 @@
 		BC558B002046794A001428C6 /* faceSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = faceSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC558B022046794A001428C6 /* faceSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = faceSDK.h; sourceTree = "<group>"; };
 		BC558B032046794A001428C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BCC1E0F3204689BB0092C463 /* libface.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libface.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		BCC1E0F5204689BB0092C463 /* face.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = face.h; sourceTree = "<group>"; };
+		BCC1E0F6204689BB0092C463 /* face.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = face.m; sourceTree = "<group>"; };
+		BCC1E10320468A4E0092C463 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +203,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BCC1E0F0204689BB0092C463 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCC1E10A20468AA60092C463 /* CoreVideo.framework in Frameworks */,
+				BCC1E10920468A8D0092C463 /* Foundation.framework in Frameworks */,
+				BCC1E10820468A750092C463 /* UIKit.framework in Frameworks */,
+				BCC1E10720468A6B0092C463 /* SystemConfiguration.framework in Frameworks */,
+				BCC1E10620468A650092C463 /* Security.framework in Frameworks */,
+				BCC1E10520468A540092C463 /* CoreMedia.framework in Frameworks */,
+				BCC1E10420468A4E0092C463 /* CoreAudio.framework in Frameworks */,
+				BCC1E10220468A450092C463 /* AVFoundation.framework in Frameworks */,
+				BCC1E10120468A3B0092C463 /* CFNetwork.framework in Frameworks */,
+				BCC1E10020468A350092C463 /* MobileCoreServices.framework in Frameworks */,
+				BCC1E0FF20468A090092C463 /* Accelerate.framework in Frameworks */,
+				BCC1E0FD20468A000092C463 /* FDFramework.framework in Frameworks */,
+				BCC1E0FE20468A000092C463 /* KYFaceCompare.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -159,6 +231,7 @@
 			children = (
 				BC31D937204563A600B3C58D /* BCFaceSDKDemo */,
 				BC558B012046794A001428C6 /* faceSDK */,
+				BCC1E0F4204689BB0092C463 /* face */,
 				BC31D936204563A600B3C58D /* Products */,
 				BC558A7A20464327001428C6 /* Frameworks */,
 			);
@@ -169,6 +242,7 @@
 			children = (
 				BC31D935204563A600B3C58D /* BCFaceSDKDemo.app */,
 				BC558B002046794A001428C6 /* faceSDK.framework */,
+				BCC1E0F3204689BB0092C463 /* libface.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -194,6 +268,7 @@
 		BC558A7A20464327001428C6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BCC1E10320468A4E0092C463 /* CoreAudio.framework */,
 				BC558A8D204643A2001428C6 /* MobileCoreServices.framework */,
 				BC558A8B20464381001428C6 /* CFNetwork.framework */,
 				BC558A8920464378001428C6 /* CoreVideo.framework */,
@@ -235,6 +310,15 @@
 			path = faceSDK;
 			sourceTree = "<group>";
 		};
+		BCC1E0F4204689BB0092C463 /* face */ = {
+			isa = PBXGroup;
+			children = (
+				BCC1E0F5204689BB0092C463 /* face.h */,
+				BCC1E0F6204689BB0092C463 /* face.m */,
+			);
+			path = face;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -247,6 +331,15 @@
 				BC558B1B20467A37001428C6 /* KYFaceViewController.h in Headers */,
 				BC558B1D20467A49001428C6 /* KYFaceAnimationView.h in Headers */,
 				BC558B1E20467A4D001428C6 /* KYFaceDetectorErrorView.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC1E10D20468AD90092C463 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCC1E11020468AFF0092C463 /* KYFaceAnimationView.h in Headers */,
+				BCC1E11220468B0B0092C463 /* KYFaceDetectorErrorView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +373,7 @@
 				BC558AFC2046794A001428C6 /* Frameworks */,
 				BC558AFD2046794A001428C6 /* Headers */,
 				BC558AFE2046794A001428C6 /* Resources */,
+				BCC1E0EC2046837A0092C463 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -289,6 +383,24 @@
 			productName = faceSDK;
 			productReference = BC558B002046794A001428C6 /* faceSDK.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		BCC1E0F2204689BB0092C463 /* face */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCC1E0F9204689BB0092C463 /* Build configuration list for PBXNativeTarget "face" */;
+			buildPhases = (
+				BCC1E0EF204689BB0092C463 /* Sources */,
+				BCC1E0F0204689BB0092C463 /* Frameworks */,
+				BCC1E0F1204689BB0092C463 /* CopyFiles */,
+				BCC1E10D20468AD90092C463 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = face;
+			productName = face;
+			productReference = BCC1E0F3204689BB0092C463 /* libface.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -304,6 +416,10 @@
 						ProvisioningStyle = Automatic;
 					};
 					BC558AFF2046794A001428C6 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					BCC1E0F2204689BB0092C463 = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 					};
@@ -324,6 +440,7 @@
 			targets = (
 				BC31D934204563A600B3C58D /* BCFaceSDKDemo */,
 				BC558AFF2046794A001428C6 /* faceSDK */,
+				BCC1E0F2204689BB0092C463 /* face */,
 			);
 		};
 /* End PBXProject section */
@@ -370,6 +487,18 @@
 				BC558B1C20467A40001428C6 /* KYFaceViewController.m in Sources */,
 				BC558B2020467A58001428C6 /* KYFaceDetectorErrorView.m in Sources */,
 				BC558B1F20467A54001428C6 /* KYFaceAnimationView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BCC1E0EF204689BB0092C463 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BCC1E10B20468AC40092C463 /* BCFaceSDK.mm in Sources */,
+				BCC1E10F20468AEF0092C463 /* KYFaceViewController.m in Sources */,
+				BCC1E11120468B050092C463 /* KYFaceAnimationView.m in Sources */,
+				BCC1E11320468B0F0092C463 /* KYFaceDetectorErrorView.m in Sources */,
+				BCC1E0F7204689BB0092C463 /* face.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -567,6 +696,8 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = " -ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bc.faceSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
@@ -596,12 +727,52 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = " -ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bc.faceSDK;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BCC1E0FA204689BB0092C463 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KE5MJRYE2S;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BCFaceSDKDemo/SDK",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BCC1E0FB204689BB0092C463 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = KE5MJRYE2S;
+				ENABLE_BITCODE = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/BCFaceSDKDemo/SDK",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				ONLY_ACTIVE_ARCH = NO;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -631,6 +802,15 @@
 			buildConfigurations = (
 				BC558B0A2046794A001428C6 /* Debug */,
 				BC558B0B2046794A001428C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BCC1E0F9204689BB0092C463 /* Build configuration list for PBXNativeTarget "face" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCC1E0FA204689BB0092C463 /* Debug */,
+				BCC1E0FB204689BB0092C463 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
