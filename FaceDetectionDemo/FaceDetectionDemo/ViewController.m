@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import <faceSDK/KYFaceViewController.h>
+#import "KYFaceViewController.h"
 
 @interface ViewController ()<UINavigationControllerDelegate, UIImagePickerControllerDelegate,KYFaceViewControllerDelegate> {
   
